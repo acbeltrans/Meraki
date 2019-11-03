@@ -6,7 +6,7 @@ const ShowGroups = () => {
     fetch("https://www.eventbriteapi.com/v3/categories/", {
       method: "GET",
       headers: {
-        Authorization: process.env.PERSONAL_OAUTH_TOKEN,
+        "Authorization": process.env.PERSONAL_OAUTH_TOKEN,
         "Content-Type": "application/json"
       }
     })
