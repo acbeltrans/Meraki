@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { BrowserRouter as Link } from "react-router-dom";
 
 const ShowGroups = () => {
+  useEffect(() => {
+    fetch(process.env.API_URL).then(data => {
+      console.log("Aqui van", data);
+    });
+  });
+
   return (
     <div>
       <h1>Aqui van los grupos</h1>
-      <a className="btn btn-primary" href="/CreateGroup">
-        Lets Create a new group
-      </a>
+      <Link to="/CreateGroup" className="nav-link">
+        Create a new group
+      </Link>
     </div>
   );
 };
