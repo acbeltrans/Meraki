@@ -5,7 +5,6 @@ function FormSignUp(props) {
   return (
     <Modal
       {...props}
-      size=""
       aria-labelledby="contained-modal-title-vcenter"
       centered
     >
@@ -17,21 +16,21 @@ function FormSignUp(props) {
       <Modal.Body>
         <form>
           <div className="form-group">
-            <label for="exampleInputEmail1">Name</label>
-            <input type="email" className="form-control" id="name" placeholder="Name"/>
+            <label>Name</label>
+            <input type="Name" className="form-control" id="Name" placeholder="Name"/>
           </div>
           <div className="form-group">
-            <label for="exampleInputEmail1">Last Name</label>
-            <input type="email" className="form-control" id="surname" aria-describedby="emailHelp" placeholder="Last Name"/>
+            <label>Last Name</label>
+            <input type="Last Name" className="form-control" id="LastName" aria-describedby="lastName" placeholder="Last Name"/>
           </div>
           <div className="form-group">
-            <label for="exampleInputEmail1">Email address</label>
-            <input type="email" className="form-control" id="email" aria-describedby="emailHelp" placeholder="Email address"/>
+            <label>Email address</label>
+            <input type="email" className="form-control" id="Email" aria-describedby="email" placeholder="Email address"/>
             <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
           </div>
           <div className="form-group">
-            <label for="exampleInputPassword1">Password</label>
-            <input type="password" className="form-control" id="exampleInputPassword1" placeholder="Password"/>
+            <label>Password</label>
+            <input type="password" className="form-control" id="Password" placeholder="Password"/>
           </div>
           <button type="submit" className="btn btn-primary">Submit</button>
         </form>

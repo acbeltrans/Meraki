@@ -36,8 +36,8 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
             <li className="nav-item">
-              <a className="nav-link" href="">
-                Test
+              <a className="nav-link" href="/About">
+                About
               </a>
             </li>
           </ul>
