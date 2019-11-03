@@ -5,22 +5,15 @@ import FormSignUp from "../Form/FormSignUp.js";
 import "./NavBar.css";
 
 const NavBar = () => {
-  const [modalShowSignIn, setModalShowSignIn] = useState(false);
+  const [ modalShowSignIn, setModalShowSignIn ] = useState(false);
 
-  const [modalShowSignUp, setModalShowSignUp] = useState(false);
+  const [ modalShowSignUp, setModalShowSignUp ] = useState(false);
 
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <a href="/">
-          <img
-            className="icon"
-            src=""
-            width="55"
-            height="55"
-            title="Brand image"
-            alt=""
-          />
+          <img className="icon" src="" width="55" height="55" title="Brand image" alt="" />
         </a>
         <button
           className="navbar-toggler"
@@ -29,9 +22,8 @@ const NavBar = () => {
           data-target="#navbarTogglerDemo01"
           aria-controls="navbarTogglerDemo01"
           aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon"></span>
+          aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon" />
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
@@ -41,9 +33,14 @@ const NavBar = () => {
               </Link>
             </li>
             <li className="nav-item">
-              <Link to="/ShowGroups" className="nav-link">
+              {/*               <Link to="/ShowGroups" className="nav-link">
                 Groups
-              </Link>
+              </Link> */}
+              <a
+                className="nav-link"
+                href="https://www.eventbrite.com/oauth/authorize?response_type=code&client_id=ASASASAS">
+                Groups
+              </a>
             </li>
           </ul>
         </div>
@@ -52,15 +49,9 @@ const NavBar = () => {
 
         <button onClick={() => setModalShowSignIn(true)}>Sign In</button>
 
-        <FormSignIn
-          show={modalShowSignIn}
-          onHide={() => setModalShowSignIn(false)}
-        />
+        <FormSignIn show={modalShowSignIn} onHide={() => setModalShowSignIn(false)} />
 
-        <FormSignUp
-          show={modalShowSignUp}
-          onHide={() => setModalShowSignUp(false)}
-        />
+        <FormSignUp show={modalShowSignUp} onHide={() => setModalShowSignUp(false)} />
       </nav>
     </div>
   );

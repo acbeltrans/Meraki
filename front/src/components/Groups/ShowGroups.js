@@ -1,29 +1,44 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
-const ShowGroups = () => {
-  useEffect(() => {
+class ShowGroups extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      events : []
+    };
+  }
+
+  componentDidMount() {
     fetch("https://www.eventbriteapi.com/v3/categories/", {
-      method: "GET",
-      headers: {
-        "Authorization": process.env.PERSONAL_OAUTH_TOKEN,
-        "Content-Type": "application/json"
+      headers : {
+        Authorization  : process.env.PERSONAL_OAUTH_TOKEN,
+        "Content-Type" : "application/json"
       }
     })
-      .then(res => res.json())
-      .then(data => {
-        console.log("Aqui van", data);
+      .then((res) => res.json())
+      .then((data) => {
+        this.setState({
+          events : data
+        });
       });
-  }, []);
+  }
 
-  return (
-    <div>
-      <h1>Aqui van los grupos</h1>
-      <Link to="/CreateGroup" className="nav-link">
-        Create a new group
-      </Link>
-    </div>
-  );
-};
+  renderEvents() {
+    return this.state.events.map((e) => <div key={e.name}>{e.name}</div>);
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Aqui van los grupos</h1>
+        {setTimeout(this.renderEvents(), 10000)}
+        <Link to="/CreateGroup" className="nav-link">
+          Create a new group
+        </Link>
+      </div>
+    );
+  }
+}
 
 export default ShowGroups;

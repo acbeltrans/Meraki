@@ -1,27 +1,25 @@
-let express = require('express');
+let express = require("express");
 let router = express.Router();
-let mongo = require('mongodb');
-let MongoClient = require('mongodb').MongoClient;
+let mongo = require("mongodb");
+let MongoClient = require("mongodb").MongoClient;
 
 let users = undefined;
 
 /* GET all users */
 function getUsers(fnCBK, errCBK) {
- users.find({})
-    .toArray((err, data) => {
-      if(err) {
-        errCBK(err);
-        return;
-      }
+  users.find({}).toArray((err, data) => {
+    if (err) {
+      errCBK(err);
+      return;
+    }
 
-      console.log("# users", data.length);
+    console.log("# users", data.length);
 
-      fnCBK(data);
-   });
+    fnCBK(data);
+  });
 }
 
-router.get('/', (req, res) => {
-
+router.get("/", (req, res) => {
   users = req.config.usersDB.users;
   function fnCBK(data) {
     res.send(data);
@@ -36,23 +34,20 @@ router.get('/', (req, res) => {
 
 /* GET user by email */
 function getUser(userEmail, fnCBK, errCBK) {
+  users.find({ correo: userEmail }).toArray((err, data) => {
+    if (err) {
+      errCBK(err);
+      return;
+    }
 
-  users.find({correo: userEmail})
-    .toArray((err, data) => {
-        if(err) {
-          errCBK(err);
-          return;
-        }
+    console.log("# users", data.length);
+    console.log(data[0]);
 
-        console.log("# users", data.length);
-        console.log(data[0]);
-
-        fnCBK(data);
-     });
+    fnCBK(data);
+  });
 }
 
-router.get('/user', (req, res) => {
-
+router.get("/user", (req, res) => {
   users = req.config.usersDB.users;
   userEmail = req.query.email;
 
@@ -69,17 +64,17 @@ router.get('/user', (req, res) => {
 
 /*POST user*/
 function postUser(new_user, fnCBK, errCBK) {
-  users.insertOne(new_user, (err,res) => {
-    if(err) {
+  users.insertOne(new_user, (err, res) => {
+    if (err) {
       errCBK(err);
       return;
     }
 
-    console.log(new_user+'inserted');
-    fnCBK('Usuario agregado con exito');
+    console.log(new_user + "inserted");
+    fnCBK("Usuario agregado con exito");
   });
 }
-router.post('/', (req, res) => {
+router.post("/", (req, res) => {
   users = req.config.usersDB.users;
 
   let name = req.body.name;
@@ -88,10 +83,10 @@ router.post('/', (req, res) => {
   let password = req.body.password;
 
   let new_user = {
-    name: name,
-    last_name: last_name,
-    email: email,
-    password: password
+    name      : name,
+    last_name : last_name,
+    email     : email,
+    password  : password
   };
 
   function fnCBK(data) {
@@ -107,17 +102,17 @@ router.post('/', (req, res) => {
 
 /*UPDATE user*/
 function updateUserDB(query, update_user, fnCBK, errCBK) {
-  users.updateOne(query, update_user, (err,res) => {
-    if(err) {
+  users.updateOne(query, update_user, (err, res) => {
+    if (err) {
       errCBK(err);
       return;
     }
 
-    console.log(update_user+' updated');
-    fnCBK('Usuario actualizado con exito');
+    console.log(update_user + " updated");
+    fnCBK("Usuario actualizado con exito");
   });
 }
-router.put('/user', (req, res) => {
+router.put("/user", (req, res) => {
   users = req.config.usersDB.users;
 
   let name = req.body.name;
@@ -126,11 +121,11 @@ router.put('/user', (req, res) => {
   let password = req.body.password;
 
   let update_user = {
-    $set:{
-      name: name,
-      last_name: last_name,
-      email: email,
-      password: password
+    $set : {
+      name      : name,
+      last_name : last_name,
+      email     : email,
+      password  : password
     }
   };
 
@@ -142,9 +137,8 @@ router.put('/user', (req, res) => {
     res.send(err);
   }
 
-  let query = {email: email};
+  let query = { email: email };
   updateUser(query, update_user, fnCBK, errCBK);
 });
-
 
 module.exports = router;
