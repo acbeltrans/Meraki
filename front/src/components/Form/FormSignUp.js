@@ -28,10 +28,6 @@ const FormSignUp = (props) => {
     setPassword(inRefPassword.current.value);
   };
 
-  const onKeyPressChecked = event => {
-    
-  };
-
   const handleSubmit = () => {
     fetch("/users", {
       method: 'POST',
@@ -116,7 +112,7 @@ const FormSignUp = (props) => {
             className="btn btn-primary" 
             onClick={handleSubmit}
           >
-            Regístrate
+            Sign up
           </button>
         </form>
       </Modal.Body>
