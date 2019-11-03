@@ -4,7 +4,6 @@ import FormSignUp from "../Form/FormSignUp.js";
 import "./NavBar.css";
 
 const NavBar = () => {
-
   const [modalShowSignIn, setModalShowSignIn] = useState(false);
 
   const [modalShowSignUp, setModalShowSignUp] = useState(false);
@@ -40,16 +39,17 @@ const NavBar = () => {
                 About
               </a>
             </li>
+            <li className="nav-item">
+              <a className="nav-link" href="/ShowGroups">
+                Groups
+              </a>
+            </li>
           </ul>
         </div>
 
-        <button onClick={() => setModalShowSignUp(true)}>
-          Sign Up
-        </button>
+        <button onClick={() => setModalShowSignUp(true)}>Sign Up</button>
 
-        <button onClick={() => setModalShowSignIn(true)}>
-          Sign In
-        </button>
+        <button onClick={() => setModalShowSignIn(true)}>Sign In</button>
 
         <FormSignIn
           show={modalShowSignIn}
