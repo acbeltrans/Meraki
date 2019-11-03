@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 const ShowGroups = () => {
   useEffect(() => {
-    fetch("https://www.eventbriteapi.com/v3/events/search/", {
+    fetch("https://www.eventbriteapi.com/v3/categories/", {
       method: "GET",
       headers: {
         Authorization: process.env.PERSONAL_OAUTH_TOKEN,
