@@ -8,14 +8,14 @@ import "./App.css";
 
 function App() {
   return (
-    <div>
-      <Navbar></Navbar>
-      <Router>
+    <Router>
+      <div>
+        <Navbar></Navbar>
         <Route exact path="/" component={Home} />
-        <Route exact path="/CreateGroup" component={CreateGroups} />
-        <Route exact path="/ShowGroups" component={ShowGroups} />
-      </Router>
-    </div>
+        <Route path="/CreateGroup" component={CreateGroups} />
+        <Route path="/ShowGroups" component={ShowGroups} />
+      </div>
+    </Router>
   );
 }
 

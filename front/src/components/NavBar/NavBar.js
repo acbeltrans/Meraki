@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import FormSignIn from "../Form/FormSignIn.js";
 import FormSignUp from "../Form/FormSignUp.js";
 import "./NavBar.css";
@@ -35,14 +36,14 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
             <li className="nav-item">
-              <a className="nav-link" href="/About">
+              <Link to="/About" className="nav-link">
                 About
-              </a>
+              </Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link" href="/ShowGroups">
+              <Link to="/ShowGroups" className="nav-link">
                 Groups
-              </a>
+              </Link>
             </li>
           </ul>
         </div>
