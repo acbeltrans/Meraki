@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import FormCreateGroup from "../Form/FormCreateGroup.js";
 import "./CreateGroup.css";
 
-const Group = () => {
+const CreateGroup = () => {
   const [modalShowCreateGroup, setModalShowCreateGroup] = useState(false);
 
   return (
@@ -22,4 +22,4 @@ const Group = () => {
   );
 };
 
-export default Group;
+export default CreateGroup;
