@@ -1,7 +1,59 @@
-import React, { useState } from "react";
-import Modal from 'react-bootstrap/Modal';
+import React, { useState, useRef } from "react";
+import Modal from "react-bootstrap/Modal";
 
-function FormSignUp(props) {
+const FormSignUp = (props) => {
+
+  const [name, setName] = useState("");
+  const [last_name, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const inRefName = useRef();
+  const inRefLastName = useRef();
+  const inRefEmail = useRef();
+  const inRefPassword = useRef();
+
+  const onChangeName = () => {
+    setName(inRefName.current.value);
+  };
+
+  const onChangeLastName = () => {
+    setLastName(inRefLastName.current.value);
+  };
+
+  const onChangeEmail = () => {
+    setEmail(inRefEmail.current.value);
+  };
+
+  const onChangePassword = () => {
+    setPassword(inRefPassword.current.value);
+  };
+
+  const onKeyPressChecked = event => {
+    
+  };
+
+  const handleSubmit = () => {
+    fetch("/users", {
+      method: 'POST',
+      body: JSON.stringify(
+      {
+        name: name,
+        last_name: last_name,
+        email: email,
+        password: password
+      }
+
+      ),
+      headers:{
+        'Content-Type': 'application/json'
+      }
+    }).then(res => res.json())
+      .catch(error => console.error('Error:', error))
+      .then(response =>
+        console.log('Success:', response)
+    );
+  };
+
   return (
     <Modal
       {...props}
@@ -17,22 +69,55 @@ function FormSignUp(props) {
         <form>
           <div className="form-group">
             <label>Name</label>
-            <input type="Name" className="form-control" id="Name" placeholder="Name"/>
+            <input 
+              onChange={onChangeName}
+              type="text"
+              ref={inRefName} 
+              className="Name" 
+              id="Name" 
+              placeholder="Name"
+            />
           </div>
           <div className="form-group">
             <label>Last Name</label>
-            <input type="Last Name" className="form-control" id="LastName" aria-describedby="lastName" placeholder="Last Name"/>
+            <input 
+              onChange={onChangeLastName}
+              type="text"
+              ref={inRefLastName} 
+              className="Last Name" 
+              id="Last Name" 
+              placeholder="Last Name"
+            />
           </div>
           <div className="form-group">
             <label>Email address</label>
-            <input type="email" className="form-control" id="Email" aria-describedby="email" placeholder="Email address"/>
-            <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+            <input 
+              onChange={onChangeEmail}
+              type="text"
+              ref={inRefEmail} 
+              className="Email" 
+              id="Email" 
+              placeholder="Email"
+            />
           </div>
           <div className="form-group">
             <label>Password</label>
-            <input type="password" className="form-control" id="Password" placeholder="Password"/>
+            <input 
+              onChange={onChangePassword}
+              type="password"
+              ref={inRefPassword} 
+              className="Password" 
+              id="Password" 
+              placeholder="Password"
+            />  
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button 
+            type="submit" 
+            className="btn btn-primary" 
+            onClick={handleSubmit}
+          >
+            Regístrate
+          </button>
         </form>
       </Modal.Body>
       <Modal.Footer>
