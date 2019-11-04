@@ -1,6 +1,5 @@
 import React from "react";
 import Events from "../Events/Events.js";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import SignNavbar from "../SignNavBar/SignNavBar.js";
 
 let aux = [];
