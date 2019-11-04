@@ -1,6 +1,8 @@
 # Meraki
+Meraki is a web application that allows people to find different events. These events are focused on volunteering. People can have the opportunity to find a huge variety of events, register and be part of a community willing to help others. Now, people will not have to spend a lot of time finding this information and, at the same time, they will be able to find out completely new events focused on their main interests.
 
 # Main Goal
+Our main purpose is to help two different types of users: foundations and people who wish to volunteer. First, the foundations are non-profit entities that fight every day to take out a project for humanity. This is why they often need donations or people who are willing to help them. However, finding these people can be difficult because the scope of the information is not enough. With this, we also want to help these users users who want to volunteer but have a hard time finding information about these processes.
 
 # Technologies used
 For this project we used:
@@ -27,7 +29,7 @@ You can find the step by step how to download Node it in the following link: htt
 
 ## How to run
 1. Clone this repository
-2. Type this command in order to install npm on the current folder. 
+2. Type this command in order to install npm on the current folder. This will run the back-end 
 ```
 npm install
 ```
@@ -37,8 +39,12 @@ You will notice that every package that the app uses are going to be installed i
 ```
 npm start
 ```
-4. To be able to deploy it locally use the following URL: http: // localhost: 3000
-5. Because we are also using MongoDB we will need to run the following command
+4. To be able to run de front use command cd. Then, you also have to run the following command again 
+```
+npm start
+```
+5. To be able to deploy it locally use the following URL: http: // localhost: 3000
+6. Because we are also using MongoDB we will need to run the following command
 ```
 mongod
 ```
