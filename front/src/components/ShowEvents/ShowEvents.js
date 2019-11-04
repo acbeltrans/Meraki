@@ -62,8 +62,8 @@ class ShowGroups extends React.Component {
   renderEvents() {
     return this.state.events.map((e) => {
       return (
-        <div className="col">
-          <Events key={e.name} name={e.name} url={e.image} description={e.description} />
+        <div className="col" key={e.name}>
+          <Events name={e.name} url={e.image} description={e.description} />
         </div>
       );
     });
