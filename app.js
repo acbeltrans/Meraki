@@ -20,7 +20,7 @@ client.connect(err => {
 
   console.log("Conectado a monguito!");
 
-  db = client.db("Proyecto");
+  db = client.db("Meraki");
   users = db.collection("Users");
 });
 
