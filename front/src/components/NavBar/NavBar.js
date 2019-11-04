@@ -38,7 +38,7 @@ const NavBar = () => {
               </Link> */}
               <a
                 className="nav-link"
-                href="https://www.eventbrite.com/oauth/authorize?response_type=code&client_id=ASASASAS">
+                href="https://www.eventbrite.com/oauth/authorize?response_type=code&client_id=77CY3HYHCI2MAQYUSM">
                 Groups
               </a>
             </li>
