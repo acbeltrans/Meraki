@@ -9,7 +9,29 @@ const NavBar = () => {
 
   const [ modalShowSignUp, setModalShowSignUp ] = useState(false);
 
-  let url = "https://www.eventbrite.com/oauth/authorize?response_type=code&client_id=";
+  const [ logIn, setLogIn ] = useState(false);
+
+  const verifyLogIn = () => {
+    if (logIn) {
+      return (
+        <Link to="/Home" className="nav-link">
+          Home
+        </Link>
+      );
+    } else {
+      return (
+        <Link to="/" className="nav-link">
+          Home
+        </Link>
+      );
+    }
+  };
+
+  const handleClick = () => {
+    console.log(logIn);
+    setModalShowSignIn(true);
+    setLogIn(true);
+  };
 
   return (
     <div className="container">
@@ -26,18 +48,11 @@ const NavBar = () => {
         </button>
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+            <li className="nav-item">{verifyLogIn()}</li>
             <li className="nav-item">
-              <Link to="/" className="nav-link">
-                Home
+              <Link to="/ShowGroups" className="nav-link">
+                Events
               </Link>
-            </li>
-            <li className="nav-item">
-              {/*               <Link to="/ShowGroups" className="nav-link">
-                Groups
-              </Link> */}
-              <a className="nav-link" href={url.concat(process.env.API_AUTH)}>
-                Groups
-              </a>
             </li>
           </ul>
         </div>
@@ -46,7 +61,7 @@ const NavBar = () => {
           Sign Up
         </Link>
 
-        <Link to="" className="nav-link" onClick={() => setModalShowSignIn(true)}>
+        <Link to="" className="nav-link" onClick={() => handleClick()}>
           Sign In
         </Link>
 
