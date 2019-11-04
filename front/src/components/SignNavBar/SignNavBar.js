@@ -44,14 +44,9 @@ const SignNavBar = () => {
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
             <li className="nav-item">{verifyLogIn()}</li>
             <li className="nav-item">
-              <Link to="/ShowGroups" className="nav-link">
+              <Link to="/ShowEvents" className="nav-link">
                 Events
               </Link>
-              {/*               <a
-                className="nav-link"
-                href="https://www.eventbrite.com/oauth/authorize?response_type=code&client_id=77CY3HYHCI2MAQYUSM">
-                Groups
-              </a> */}
             </li>
           </ul>
         </div>

@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Home from "./components/Home/Home.js";
 import SignHome from "./components/SignHome/SignHome.js";
-import ShowGroups from "./components/Groups/ShowGroups.js";
+import ShowEvents from "./components/ShowEvents/ShowEvents.js";
 import "./App.css";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <div>
         <Route exact path="/" component={Home} />
         <Route exact path="/Home" component={SignHome} />
-        <Route exact path="/ShowGroups" component={ShowGroups} />
+        <Route exact path="/ShowEvents" component={ShowEvents} />
       </div>
     </Router>
   );
