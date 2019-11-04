@@ -5,7 +5,9 @@ const MyMongoLib = function() {
   const MyMongoLib = this || {};
 
   // Connection URL
-  const url = process.env.MONGO_URL || "mongodb://localhost:27017";
+  const url =
+    process.env.MONGO_URL ||
+    "mongodb+srv://daniel:dard98031160243@amercar-p9oq8.mongodb.net/test?retryWrites=true&w=majority";
 
   // Database Name
   const dbName = "Meraki";
@@ -27,7 +29,7 @@ const MyMongoLib = function() {
         return collection
           .find({})
           .toArray()
-          .then(data => {
+          .then((data) => {
             client.close();
             resolve(data);
           })
@@ -35,7 +37,7 @@ const MyMongoLib = function() {
       });
     });
 
-  MyMongoLib.getUser = user_mail =>
+  MyMongoLib.getUser = (user_mail) =>
     new Promise((resolve, reject) => {
       // Use connect method to connect to the Server
       client.connect((err, client) => {
@@ -50,7 +52,7 @@ const MyMongoLib = function() {
         return collection
           .find({ mail: user_mail })
           .toArray()
-          .then(data => {
+          .then((data) => {
             client.close();
             resolve(data);
           })
@@ -58,7 +60,7 @@ const MyMongoLib = function() {
       });
     });
 
-  MyMongoLib.postUser = newUser =>
+  MyMongoLib.postUser = (newUser) =>
     new Promise((resolve, reject) => {
       // Use connect method to connect to the Server
       client.connect((err, client) => {
@@ -72,7 +74,7 @@ const MyMongoLib = function() {
 
         return collection
           .insertOne(newUser)
-          .then(data => {
+          .then((data) => {
             client.close();
             resolve(data);
           })
@@ -95,7 +97,7 @@ const MyMongoLib = function() {
         return collection
           .find({})
           .toArray()
-          .then(data => {
+          .then((data) => {
             client.close();
             resolve(data);
           })
@@ -103,7 +105,7 @@ const MyMongoLib = function() {
       });
     });
 
-  MyMongoLib.getMessage = message_id =>
+  MyMongoLib.getMessage = (message_id) =>
     new Promise((resolve, reject) => {
       // Use connect method to connect to the Server
       client.connect((err, client) => {
@@ -120,7 +122,7 @@ const MyMongoLib = function() {
         return collection
           .find({ _id: ObjectId(message_id) })
           .toArray()
-          .then(data => {
+          .then((data) => {
             client.close();
             resolve(data);
           })
@@ -128,7 +130,7 @@ const MyMongoLib = function() {
       });
     });
 
-  MyMongoLib.postMessage = newMessage =>
+  MyMongoLib.postMessage = (newMessage) =>
     new Promise((resolve, reject) => {
       client.connect((err, client) => {
         if (err !== null) {
@@ -141,7 +143,7 @@ const MyMongoLib = function() {
 
         return collection
           .insertOne(newMessage)
-          .then(data => {
+          .then((data) => {
             client.close();
             resolve(data);
           })
@@ -149,7 +151,7 @@ const MyMongoLib = function() {
       });
     });
 
-  MyMongoLib.deleteMessage = message_id =>
+  MyMongoLib.deleteMessage = (message_id) =>
     new Promise((resolve, reject) => {
       client.connect((err, client) => {
         if (err !== null) {
@@ -162,7 +164,7 @@ const MyMongoLib = function() {
 
         return collection
           .deleteOne({ _id: ObjectId(message_id) })
-          .then(data => {
+          .then((data) => {
             client.close();
             resolve(data);
           })
@@ -170,9 +172,8 @@ const MyMongoLib = function() {
       });
     });
 
-  MyMongoLib.listenToChanges = cbk => {
+  MyMongoLib.listenToChanges = (cbk) => {
     client.connect((err, client) => {
-      
       console.log("ListenToChanges - Connected correctly to server");
 
       const db = client.db(dbName);
@@ -182,9 +183,9 @@ const MyMongoLib = function() {
 
       console.log("Listening to changes on mongo");
 
-      csCursorMessages.on("change", data => {
+      csCursorMessages.on("change", (data) => {
         console.log("Messages changed: ", data);
-        MyMongoLib.getMessages().then(docs => cbk(JSON.stringify(data)));
+        MyMongoLib.getMessages().then((docs) => cbk(JSON.stringify(data)));
       });
     });
   };
