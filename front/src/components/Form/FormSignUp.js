@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import Modal from "react-bootstrap/Modal";
+import "./FormSignUp.css";
 
 const FormSignUp = (props) => {
 
@@ -7,6 +8,7 @@ const FormSignUp = (props) => {
   const [last_name, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [estado, setEstado] = useState(false);
   const inRefName = useRef();
   const inRefLastName = useRef();
   const inRefEmail = useRef();
@@ -48,6 +50,7 @@ const FormSignUp = (props) => {
       .then(response =>
         console.log('Success:', response)
     );
+    setEstado(true);
   };
 
   return (
@@ -57,7 +60,7 @@ const FormSignUp = (props) => {
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title id="contained-modal-title-vcenter">
+        <Modal.Title id="contained-modal-title-vcenter" className="title">
           Sign Up
         </Modal.Title>
       </Modal.Header>
@@ -107,17 +110,12 @@ const FormSignUp = (props) => {
               placeholder="Password"
             />  
           </div>
-          <button 
-            type="submit" 
-            className="btn btn-primary" 
-            onClick={handleSubmit}
-          >
-            Sign up
-          </button>
         </form>
       </Modal.Body>
       <Modal.Footer>
-        <button onClick={props.onHide}>Close</button>
+        <a className="nav-link btnSignUp text" href="/Home" onClick={handleSubmit}>
+          Sign up
+        </a>
       </Modal.Footer>
     </Modal>
   );

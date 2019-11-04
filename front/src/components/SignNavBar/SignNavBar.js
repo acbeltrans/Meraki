@@ -1,18 +1,12 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import FormSignIn from "../Form/FormSignIn.js";
-import FormSignUp from "../Form/FormSignUp.js";
-import "./NavBar.css";
+import "./SignNavBar.css";
 
-const NavBar = () => {
-  const [ modalShowSignIn, setModalShowSignIn ] = useState(false);
-
-  const [ modalShowSignUp, setModalShowSignUp ] = useState(false);
-
-  let url = "https://www.eventbrite.com/oauth/authorize?response_type=code&client_id=";
+const SignNavBar = () => {
+  const [ modalShowSignOut, setModalShowSignOut ] = useState(false);
 
   return (
-    <div className="container">
+    <div className = "container">
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
         <button
           className="navbar-toggler"
@@ -27,7 +21,7 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
             <li className="nav-item">
-              <Link to="/" className="nav-link">
+              <Link to="/Home" className="nav-link">
                 Home
               </Link>
             </li>
@@ -35,27 +29,21 @@ const NavBar = () => {
               {/*               <Link to="/ShowGroups" className="nav-link">
                 Groups
               </Link> */}
-              <a className="nav-link" href={url.concat(process.env.API_AUTH)}>
+              <a
+                className="nav-link"
+                href="https://www.eventbrite.com/oauth/authorize?response_type=code&client_id=77CY3HYHCI2MAQYUSM">
                 Groups
               </a>
             </li>
           </ul>
         </div>
 
-        <Link to="" className="nav-link" onClick={() => setModalShowSignUp(true)}>
-          Sign Up
+        <Link to="/" className="nav-link">
+            Sign Out
         </Link>
-
-        <Link to="" className="nav-link" onClick={() => setModalShowSignIn(true)}>
-          Sign In
-        </Link>
-
-        <FormSignIn show={modalShowSignIn} onHide={() => setModalShowSignIn(false)} />
-
-        <FormSignUp show={modalShowSignUp} onHide={() => setModalShowSignUp(false)} />
       </nav>
     </div>
   );
 };
 
-export default NavBar;
+export default SignNavBar;
