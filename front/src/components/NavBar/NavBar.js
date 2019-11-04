@@ -44,7 +44,6 @@ const NavBar = () => {
   };
 
   const handleClick = () => {
-    console.log(logIn);
     setModalShowSignIn(true);
     setLogIn(true);
   };
@@ -69,13 +68,13 @@ const NavBar = () => {
           </ul>
         </div>
 
-        <Link to="" className="nav-link" onClick={() => setModalShowSignUp(true)}>
+        <button className="btn btn-ligth" onClick={() => setModalShowSignUp(true)}>
           Sign Up
-        </Link>
+        </button>
 
-        <Link to="" className="nav-link" onClick={() => handleClick()}>
+        <button className="btn btn-dark" onClick={() => handleClick()}>
           Sign In
-        </Link>
+        </button>
 
         <FormSignIn show={modalShowSignIn} onHide={() => setModalShowSignIn(false)} />
 

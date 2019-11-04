@@ -1,11 +1,8 @@
-import React, { useState } from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import React from "react";
 import "./SignHome.css";
 import SignNavbar from "../SignNavBar/SignNavBar.js";
 
 const SignHome = () => {
-  const [ modalShowSignUp, setModalShowSignUp ] = useState(false);
-
   return (
     <div>
       <SignNavbar />

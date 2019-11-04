@@ -63,7 +63,7 @@ const SignNavBar = () => {
           </ul>
         </div>
 
-        <Link to="/" className="nav-link" onClick={() => setLogIn(false)}>
+        <Link to="/" className="btn signOut" onClick={() => setLogIn(false)}>
           Sign Out
         </Link>
       </nav>

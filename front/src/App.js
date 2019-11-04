@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./components/Home/Home.js";
 import SignHome from "./components/SignHome/SignHome.js";
 import ShowEvents from "./components/ShowEvents/ShowEvents.js";
@@ -10,13 +10,13 @@ import "./App.css";
 function App() {
   return (
     <Router>
-      <div>
+      <Switch>
         <Route exact path="/" component={Home} />
-        <Route exact path="/Home" component={SignHome} />
-        <Route exact path="/ShowEvents" component={ShowEvents} />
+        <Route path="/Home" component={SignHome} />
+        <Route path="/ShowEvents" component={ShowEvents} />
         <Route path="/ShowEventsGeneral" component={ShowEventsGeneral} />
         <Route path="/EventDetail" component={EventDetail} />
-      </div>
+      </Switch>
     </Router>
   );
 }
