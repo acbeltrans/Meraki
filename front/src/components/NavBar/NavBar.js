@@ -27,6 +27,22 @@ const NavBar = () => {
     }
   };
 
+  const verifyLogInEvents = () => {
+    if (logIn) {
+      return (
+        <Link to="/ShowEvents" className="nav-link">
+          Events
+        </Link>
+      );
+    } else {
+      return (
+        <Link to="/ShowEventsGeneral" className="nav-link">
+          Events
+        </Link>
+      );
+    }
+  };
+
   const handleClick = () => {
     console.log(logIn);
     setModalShowSignIn(true);
@@ -49,11 +65,7 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
             <li className="nav-item">{verifyLogIn()}</li>
-            <li className="nav-item">
-              <Link to="/ShowGroups" className="nav-link">
-                Events
-              </Link>
-            </li>
+            <li className="nav-item">{verifyLogInEvents()}</li>
           </ul>
         </div>
 
