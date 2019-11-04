@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./SignHome.css";
 import SignNavbar from "../SignNavBar/SignNavBar.js";
 
