@@ -19,7 +19,7 @@ On the other hand, the application is deployed in Heroku
 # How to run
 ## Prerequisites
 It is important that the following tools have been downloaded for this project:
-- Node:
+- Node.js:
 To prove that node is installed on the system run the following command
 ```
 node --version
@@ -39,12 +39,16 @@ You will notice that every package that the app uses are going to be installed i
 ```
 npm start
 ```
-4. To be able to run de front use command cd. Then, you also have to run the following command again 
+4. To be able to run de front use command cd. 
+```
+cd front
+```
+5. Run again the following command
 ```
 npm start
 ```
-5. To be able to deploy it locally use the following URL: http: // localhost: 3000
-6. Because we are also using MongoDB we will need to run the following command
+6. To be able to deploy it locally use the following URL: http://localhost:3000
+7. Because we are also using MongoDB we will need to run the following command
 ```
 mongod
 ```
@@ -52,7 +56,7 @@ And, later
 ```
 mongo
 ```
-You will see that mongo will run and that you will have access to every collection and insert data on your local DB.
+You will see that mongo will run on http://localhost:27017 and that you will have access to every collection and insert data on your local DB.
 
 # Screenshot
 https://raw.githubusercontent.com/acbeltrans/acbeltrans.github.io/master/images/Screenshot.png
