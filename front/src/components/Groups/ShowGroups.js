@@ -22,7 +22,7 @@ class ShowGroups extends React.Component {
   componentDidMount() {
     fetch("https://www.eventbriteapi.com/v3/events/79481837315/", {
       headers : {
-        Authorization  : process.env.PERSONAL_OAUTH_TOKEN || "Bearer DE5VNBJ7LTY2EMPDM6B4",
+        Authorization  : process.env.PERSONAL_OAUTH_TOKEN,
         "Content-Type" : "application/json"
       }
     })

@@ -9,6 +9,8 @@ const NavBar = () => {
 
   const [ modalShowSignUp, setModalShowSignUp ] = useState(false);
 
+  let url = "https://www.eventbrite.com/oauth/authorize?response_type=code&client_id=";
+
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light bg-light">
@@ -36,9 +38,7 @@ const NavBar = () => {
               {/*               <Link to="/ShowGroups" className="nav-link">
                 Groups
               </Link> */}
-              <a
-                className="nav-link"
-                href="https://www.eventbrite.com/oauth/authorize?response_type=code&client_id=77CY3HYHCI2MAQYUSM">
+              <a className="nav-link" href={url.concat(process.env.API_AUTH)}>
                 Groups
               </a>
             </li>
