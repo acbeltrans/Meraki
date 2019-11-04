@@ -40,7 +40,7 @@ class ShowGroups extends React.Component {
       });
     fetch("https://www.eventbriteapi.com/v3/events/78002049229/", {
       headers : {
-        Authorization  : process.env.PERSONAL_OAUTH_TOKEN || "Bearer DE5VNBJ7LTY2EMPDM6B4",
+        Authorization  : process.env.PERSONAL_OAUTH_TOKEN,
         "Content-Type" : "application/json"
       }
     })
