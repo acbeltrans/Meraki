@@ -32,9 +32,9 @@ const NavBar = () => {
           </ul>
         </div>
 
-        <Link className="nav-link" onClick={() => setModalShowSignUp(true)}>Sign Up</Link>
+        <Link to="" className="nav-link" onClick={() => setModalShowSignUp(true)}>Sign Up</Link>
 
-        <Link className="nav-link" onClick={() => setModalShowSignIn(true)}>Sign In</Link>
+        <Link to="" className="nav-link" onClick={() => setModalShowSignIn(true)}>Sign In</Link>
 
         <FormSignIn show={modalShowSignIn} onHide={() => setModalShowSignIn(false)} />
 

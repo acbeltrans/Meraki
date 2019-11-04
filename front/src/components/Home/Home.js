@@ -65,7 +65,7 @@ const Home = () => {
 					</div>
 					<div className="col-sm-3 col-md-3 col-lg-1">
 						<p className="otherText">
-						<Link className="uText" onClick={() => setModalShowSignUp(true)}>
+						<Link to="" className="uText" onClick={() => setModalShowSignUp(true)}>
 							Join us
 						</Link> <br></br> in this aventure</p>
 						<FormSignUp show={modalShowSignUp} onHide={() => setModalShowSignUp(false)} />
