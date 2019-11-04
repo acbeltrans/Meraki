@@ -29,7 +29,7 @@ You can find the step by step how to download Node it in the following link: htt
 
 ## How to run
 1. Clone this repository
-2. Type this command in order to install npm on the current folder. This will run the back-end 
+2. Type this command in order to install npm on the current folder. This will run the back-end on the following URL: http://localhost:3001 
 ```
 npm install
 ```
