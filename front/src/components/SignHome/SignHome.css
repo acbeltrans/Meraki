@@ -1,0 +1,26 @@
+.mHome {
+	padding: 40px 0px 40px 0px;
+	border-width: 2px 2px 2px 2px;
+	background: linear-gradient(45deg, rgba(237,237,237,1) 0%, rgba(254,215,102,1) 58%, rgba(254,215,102,1) 100%);
+}
+
+.tinBlock {
+	padding: 50px 0px 50px 0px;
+}
+
+.text {
+	font-family: 'Rancho', cursive;
+	font-size: 26px;
+	text-align: center;
+}
+
+.oText {
+	font-family: 'Gudea', sans-serif;
+	font-size: 60px;
+	text-align: left;
+}
+
+.uText {
+	text-decoration: underline !important;
+	color:black !important;
+}

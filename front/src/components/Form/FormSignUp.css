@@ -1,0 +1,45 @@
+input[type=text], select {
+  width: 100%;
+  padding: 5px 5px;
+  margin: 0px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input[type=password], select {
+  width: 100%;
+  padding: 5px 5px;
+  margin: 0px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.btnSignUp {
+  background-color: #F3752B;
+  color: black;
+  border: none;
+  padding: 10px 10px 10px 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.btnSignUp:hover {
+  background-color: #F3752B;
+  color: black;
+  border: none;
+  padding: 10px 10px 10px 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  font-family: 'Gudea', sans-serif;
+}
+
+.text {
+  font-family: 'Gudea', sans-serif;
+}

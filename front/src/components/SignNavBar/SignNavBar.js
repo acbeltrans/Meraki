@@ -1,13 +1,9 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import FormSignIn from "../Form/FormSignIn.js";
-import FormSignUp from "../Form/FormSignUp.js";
-import "./NavBar.css";
+import "./SignNavBar.css";
 
-const NavBar = () => {
-  const [ modalShowSignIn, setModalShowSignIn ] = useState(false);
-
-  const [ modalShowSignUp, setModalShowSignUp ] = useState(false);
+const SignNavBar = () => {
+  const [ modalShowSignOut, setModalShowSignOut ] = useState(false);
 
   return (
     <div className = "container">
@@ -25,23 +21,29 @@ const NavBar = () => {
         <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
           <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
             <li className="nav-item">
-              <Link to="/" className="nav-link">
+              <Link to="/Home" className="nav-link">
                 Home
               </Link>
+            </li>
+            <li className="nav-item">
+              {/*               <Link to="/ShowGroups" className="nav-link">
+                Groups
+              </Link> */}
+              <a
+                className="nav-link"
+                href="https://www.eventbrite.com/oauth/authorize?response_type=code&client_id=77CY3HYHCI2MAQYUSM">
+                Groups
+              </a>
             </li>
           </ul>
         </div>
 
-        <Link className="nav-link" onClick={() => setModalShowSignUp(true)}>Sign Up</Link>
-
-        <Link className="nav-link" onClick={() => setModalShowSignIn(true)}>Sign In</Link>
-
-        <FormSignIn show={modalShowSignIn} onHide={() => setModalShowSignIn(false)} />
-
-        <FormSignUp show={modalShowSignUp} onHide={() => setModalShowSignUp(false)} />
+        <Link to="/" className="nav-link">
+            Sign Out
+        </Link>
       </nav>
     </div>
   );
 };
 
-export default NavBar;
+export default SignNavBar;

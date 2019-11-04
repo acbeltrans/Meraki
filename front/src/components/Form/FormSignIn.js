@@ -1,5 +1,6 @@
 import React, { useState, useRef } from "react";
 import Modal from 'react-bootstrap/Modal';
+import "./FormSignIn.css";
 
 class FormSignIn extends React.Component{
 
@@ -46,6 +47,10 @@ class FormSignIn extends React.Component{
     this.setState({password: e.target.value});
   };
 
+  moreChecking = (e) =>{
+    this.getData();
+  }
+
   render(props) {
     return (
       <Modal
@@ -54,7 +59,7 @@ class FormSignIn extends React.Component{
         centered
       >
         <Modal.Header closeButton>
-          <Modal.Title id="contained-modal-title-vcenter">
+          <Modal.Title className="title" id="contained-modal-title-vcenter">
             Sign In
           </Modal.Title>
         </Modal.Header>
@@ -80,12 +85,13 @@ class FormSignIn extends React.Component{
                 placeholder="Password"
               />  
             </div>
-            <button onClick={this.getData}>Submit</button>
-            {console.log(this.state.estado)}
+            {console.log(this.state.estado, "help")}
           </form>
         </Modal.Body>
         <Modal.Footer>
-          <button onClick={this.props.onHide}>Close</button>
+          <a className="nav-link btnSignIn text" href="/Home" onClick={this.moreChecking}>
+            Sign in
+          </a>
         </Modal.Footer>
       </Modal>
     );
