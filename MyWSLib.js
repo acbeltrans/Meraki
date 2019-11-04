@@ -4,15 +4,15 @@ const MyWsLib = function() {
   const MyWsLib = this || {};
   const clients = [];
 
-  MyWsLib.setupWS = server => {
+  MyWsLib.setupWS = (server) => {
     const wss = new WebSocket.Server({ server });
 
     console.log("setting up Web Socket");
 
-    wss.on("connection", ws => {
+    wss.on("connection", (ws) => {
       ws.isAlive = true;
 
-      ws.on("error", err => {
+      ws.on("error", (err) => {
         console.warn(`Client disconnected - reason: ${err}`);
       });
 
@@ -21,7 +21,7 @@ const MyWsLib = function() {
     });
   };
 
-  MyWsLib.notifyAll = data => {
+  MyWsLib.notifyAll = (data) => {
     for (let ws of clients) {
       ws.send(data);
     }
@@ -30,4 +30,4 @@ const MyWsLib = function() {
   return MyWsLib;
 };
 
-module.exports = MyWsLib; 
+module.exports = MyWsLib;

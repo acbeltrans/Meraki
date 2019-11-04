@@ -8,14 +8,16 @@ var mongo = require("mongodb");
 
 /* Mongo Connection*/
 const MongoClient = require("mongodb").MongoClient;
-const uri = process.env.MONGO_URL || "mongodb://127.0.0.1:27017";
+const uri =
+  process.env.MONGO_URL ||
+  "mongodb+srv://daniel:dard98031160243@amercar-p9oq8.mongodb.net/test?retryWrites=true&w=majority";
 const client = new MongoClient(uri);
 
 var db = undefined;
 var users = undefined;
 var events = undefined;
 
-client.connect(err => {
+client.connect((err) => {
   if (err) throw err;
 
   console.log("Conectado a monguito!");
@@ -46,7 +48,7 @@ app.use(
   "/users",
   function(req, res, next) {
     req.config = {
-      usersDB: { users }
+      usersDB : { users }
     };
     next();
   },
