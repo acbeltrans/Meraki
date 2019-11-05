@@ -3,11 +3,13 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
 import "./FormSignIn.css";
 
+//al momento de abrir el archivo para que sea ARIA conforme deben deshabilitar los botones que quedaron en el background. mandando un props para cambiar el renderizado 
 class FormSignIn extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
+      isModal: enabled
       data     : [],
       email    : "",
       estado   : false,
