@@ -6,8 +6,7 @@ const MyMongoLib = function() {
 
   // Connection URL
   const url =
-    process.env.MONGO_URL ||
-    "mongodb+srv://daniel:dard98031160243@amercar-p9oq8.mongodb.net/test?retryWrites=true&w=majority";
+    process.env.MONGO_URL || https://localhost:3000;
 
   // Database Name
   const dbName = "Meraki";
