@@ -1,7 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import SignNavBar from "../SignNavBar/SignNavBar.js";
-
+//instead of this page you can redirect to  https://www.eventbrite.com/manage/events/onboarding/event/name
 const EventDetail = () => {
   return (
     <div>
