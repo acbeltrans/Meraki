@@ -5,6 +5,7 @@ import SignHome from "./components/SignHome/SignHome.js";
 import ShowEvents from "./components/ShowEvents/ShowEvents.js";
 import ShowEventsGeneral from "./components/ShowEventsGeneral/ShowEventsGeneral.js";
 import EventDetail from "./components/Events/EventDetail.js";
+import CreateEvent from "./components/CreateEvent/CreateEvent.js";
 import "./App.css";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/ShowEvents" component={ShowEvents} />
         <Route path="/ShowEventsGeneral" component={ShowEventsGeneral} />
         <Route path="/EventDetail" component={EventDetail} />
+        <Route path="/CreateEvent" component={CreateEvent} />
       </Switch>
     </Router>
   );

@@ -1,7 +1,5 @@
 let express = require("express");
 let router = express.Router();
-let mongo = require("mongodb");
-let MongoClient = require("mongodb").MongoClient;
 
 let users = undefined;
 

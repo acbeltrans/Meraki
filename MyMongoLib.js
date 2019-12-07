@@ -37,6 +37,31 @@ const MyMongoLib = function() {
       });
     });
 
+  /* Get Events */
+
+  MyMongoLib.getEvents = () =>
+    new Promise((resolve, reject) => {
+      client.connect((err, client) => {
+        if (err !== null) {
+          reject(err);
+          return;
+        }
+
+        const db = client.db(dbName);
+        const eventsCol = db.collection("Event");
+
+        return eventsCol
+          .find({})
+          .limit(20)
+          .toArray()
+          .then((data) => {
+            client.close();
+            resolve(data);
+          })
+          .catch(reject);
+      });
+    });
+
   MyMongoLib.getUser = (user_mail) =>
     new Promise((resolve, reject) => {
       // Use connect method to connect to the Server
@@ -74,6 +99,28 @@ const MyMongoLib = function() {
 
         return collection
           .insertOne(newUser)
+          .then((data) => {
+            client.close();
+            resolve(data);
+          })
+          .catch(reject);
+      });
+    });
+
+  /* Post Event */
+  MyMongoLib.postEvent = (newEvent) =>
+    new Promise((resolve, reject) => {
+      client.connect((err, client) => {
+        if (err !== null) {
+          reject(err);
+          return;
+        }
+
+        const db = client.db(dbName);
+        const eventsCol = db.collection("Event");
+
+        return eventsCol
+          .insertOne(newEvent)
           .then((data) => {
             client.close();
             resolve(data);

@@ -4,32 +4,12 @@ var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
 var bodyParser = require("body-parser");
-var mongo = require("mongodb");
-
-/* Mongo Connection*/
-const MongoClient = require("mongodb").MongoClient;
-const uri =
-  process.env.MONGO_URL ||
-  "mongodb+srv://daniel:dard98031160243@amercar-p9oq8.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri);
-
-var db = undefined;
-var users = undefined;
-var events = undefined;
-
-client.connect((err) => {
-  if (err) throw err;
-
-  console.log("Conectado a monguito!");
-
-  db = client.db("Meraki");
-  users = db.collection("Users");
-});
 
 var usersRouter = require("./routes/users");
 var indexRouter = require("./routes/index");
 
 var app = express();
+
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 

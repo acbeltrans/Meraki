@@ -1,6 +1,7 @@
 import React from "react";
 import Events from "../Events/Events.js";
 import SignNavbar from "../SignNavBar/SignNavBar.js";
+import CreateEvent from "../CreateEvent/CreateEvent.js";
 
 let aux = [];
 
@@ -8,13 +9,8 @@ class ShowGroups extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      events : [
-        {
-          name        : "",
-          description : "",
-          image       : ""
-        }
-      ]
+      events               : [],
+      modalShowCreateEvent : false
     };
     this.renderEvents = this.renderEvents.bind(this);
   }
@@ -57,6 +53,13 @@ class ShowGroups extends React.Component {
         });
         aux = [];
       });
+    fetch("/events").then((res) => res.json()).then((data) => {
+      aux = data;
+      this.setState({
+        events : this.state.events.concat(aux)
+      });
+      aux = [];
+    });
   }
   renderEvents() {
     return this.state.events.map((e) => {
@@ -73,6 +76,23 @@ class ShowGroups extends React.Component {
       <div className="container">
         <SignNavbar />
         <div className="row">{this.renderEvents()}</div>
+
+        <button
+          className="btn btn-dark"
+          onClick={() =>
+            this.setState({
+              modalShowCreateEvent : true
+            })}>
+          Create Event
+        </button>
+
+        <CreateEvent
+          show={this.state.modalShowCreateEvent}
+          onHide={() =>
+            this.setState({
+              modalShowCreateEvent : false
+            })}
+        />
       </div>
     );
   }
