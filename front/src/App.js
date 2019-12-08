@@ -5,7 +5,7 @@ import SignHome from "./components/SignHome/SignHome.js";
 import ShowEvents from "./components/ShowEvents/ShowEvents.js";
 import ShowEventsGeneral from "./components/ShowEventsGeneral/ShowEventsGeneral.js";
 import EventDetail from "./components/Events/EventDetail.js";
-import CreateEvent from "./components/CreateEvent/CreateEvent.js";
+import CreateEvent from "./components/Form/CreateEvent/CreateEvent.js";
 import "./App.css";
 
 function App() {

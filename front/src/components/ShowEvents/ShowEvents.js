@@ -1,7 +1,8 @@
 import React from "react";
 import Events from "../Events/Events.js";
 import SignNavbar from "../SignNavBar/SignNavBar.js";
-import CreateEvent from "../CreateEvent/CreateEvent.js";
+import CreateEvent from "../Form/CreateEvent/CreateEvent.js";
+import Alert from "react-bootstrap/Alert";
 
 let aux = [];
 
@@ -10,15 +11,17 @@ class ShowGroups extends React.Component {
     super(props);
     this.state = {
       events               : [],
-      modalShowCreateEvent : false
+      modalShowCreateEvent : false,
+      alertShow            : false
     };
     this.renderEvents = this.renderEvents.bind(this);
+    this.createAlert = this.createAlert.bind(this);
   }
 
   componentDidMount() {
     fetch("https://www.eventbriteapi.com/v3/events/79481837315/", {
       headers : {
-        Authorization  : "Bearer DE5VNBJ7LTY2EMPDM6B4",
+        Authorization  : "Bearer YM5FWABTSMAYP4F3FRFO",
         "Content-Type" : "application/json"
       }
     })
@@ -36,7 +39,7 @@ class ShowGroups extends React.Component {
       });
     fetch("https://www.eventbriteapi.com/v3/events/78002049229/", {
       headers : {
-        Authorization  : "Bearer DE5VNBJ7LTY2EMPDM6B4",
+        Authorization  : "Bearer YM5FWABTSMAYP4F3FRFO",
         "Content-Type" : "application/json"
       }
     })
@@ -71,14 +74,23 @@ class ShowGroups extends React.Component {
     });
   }
 
+  createAlert() {
+    if (this.state.alertShow) {
+      return (
+        <Alert variant="success" onClose={() => this.setState({ alertShow: false })} dismissible>
+          El evento se creo correctamente
+        </Alert>
+      );
+    }
+  }
+
   render() {
     return (
       <div className="container">
         <SignNavbar />
-        <div className="row">{this.renderEvents()}</div>
-
+        {this.createAlert()}
         <button
-          className="btn btn-dark"
+          className="btn btn-dark btn-block mb-2"
           onClick={() =>
             this.setState({
               modalShowCreateEvent : true
@@ -86,11 +98,25 @@ class ShowGroups extends React.Component {
           Create Event
         </button>
 
+        <div className="row">{this.renderEvents()}</div>
+
+        <button
+          className="btn btn-dark btn-block mb-2"
+          onClick={() =>
+            this.setState({
+              modalShowCreateEvent : true
+            })}>
+          Create Event
+        </button>
         <CreateEvent
           show={this.state.modalShowCreateEvent}
           onHide={() =>
             this.setState({
               modalShowCreateEvent : false
+            })}
+          click={() =>
+            this.setState({
+              alertShow : true
             })}
         />
       </div>

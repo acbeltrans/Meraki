@@ -31,7 +31,7 @@ class FormSignIn extends React.Component {
       );
   }
 
-  getData = () => {
+  /*   getData = () => {
     this.state.data.map((d) => <div key={d._id}> {this.check(d.email, d.password)} </div>);
   };
 
@@ -39,7 +39,7 @@ class FormSignIn extends React.Component {
     if (email === this.state.email && password === this.state.password) {
       this.setState({ estado: true });
     }
-  }
+  } */
 
   onChangeEmail = (e) => {
     this.setState({ email: e.target.value });
@@ -49,9 +49,9 @@ class FormSignIn extends React.Component {
     this.setState({ password: e.target.value });
   };
 
-  moreChecking = (e) => {
+  /*   moreChecking = (e) => {
     this.getData();
-  };
+  }; */
 
   render(props) {
     return (
@@ -81,9 +81,9 @@ class FormSignIn extends React.Component {
           </form>
         </Modal.Body>
         <Modal.Footer>
-          <Link className="nav-link btnSignIn text" to="/Home" onClick={this.moreChecking}>
+          <button className="btn btnSignIn text" onClick={this.props.onHide}>
             Sign in
-          </Link>
+          </button>
         </Modal.Footer>
       </Modal>
     );

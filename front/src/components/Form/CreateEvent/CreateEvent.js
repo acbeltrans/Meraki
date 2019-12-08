@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
+import Alert from "react-bootstrap/Alert";
 
 const CreateEvent = (props) => {
   const [ name, setName ] = useState("");
@@ -38,6 +39,7 @@ const CreateEvent = (props) => {
       .catch((error) => console.error("Error:", error))
       .then((response) => console.log("Success:", response));
   };
+
   return (
     <Modal {...props} aria-labelledby="contained-modal-title-vcenter" centered>
       <Modal.Header closeButton>
@@ -83,7 +85,7 @@ const CreateEvent = (props) => {
         </form>
       </Modal.Body>
       <Modal.Footer>
-        <button className="btn btn-success" onClick={handleSubmit}>
+        <button className="btn btn-success" onClick={handleSubmit && props.onHide && props.click}>
           Create Event
         </button>
       </Modal.Footer>
