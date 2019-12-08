@@ -18,8 +18,15 @@ router.get("/events", function(req, res) {
     .catch(err => res.send(err));
 });
 
-/* Post Event */
+//Get users
+router.get("/users", function(req, res) {
+  myMongoLib
+    .getUsers()
+    .then(doc => res.send(doc))
+    .catch(err => res.send(err));
+});
 
+/* Post Event */
 router.post("/postEvent", (req, res) => {
   let name = req.body.name;
   let description = req.body.description;

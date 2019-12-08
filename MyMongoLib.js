@@ -5,10 +5,7 @@ const MyMongoLib = function() {
   const MyMongoLib = this || {};
 
   // Connection URL
-  const url =
-    process.env.MONGO_URL ||
-    "mongodb+srv://daniel:dard98031160243@amercar-p9oq8.mongodb.net/test?retryWrites=true&w=majority";
-
+  const url = "mongodb://localhost:27017";
   // Database Name
   const dbName = "Meraki";
   // Create a new MongoClient
@@ -62,7 +59,7 @@ const MyMongoLib = function() {
       });
     });
 
-  MyMongoLib.getUser = (user_mail) =>
+  MyMongoLib.getUser = (googleId) =>
     new Promise((resolve, reject) => {
       // Use connect method to connect to the Server
       client.connect((err, client) => {
@@ -75,9 +72,32 @@ const MyMongoLib = function() {
         const collection = db.collection("Users");
 
         return collection
-          .find({ mail: user_mail })
+          .find({ googleId: googleId })
           .toArray()
           .then((data) => {
+            client.close();
+            resolve(data);
+          })
+          .catch(reject);
+      });
+    });
+  MyMongoLib.getUserById = (id) =>
+    new Promise((resolve, reject) => {
+      // Use connect method to connect to the Server
+      client.connect((err, client) => {
+        if (err !== null) {
+          reject(err);
+          return;
+        }
+
+        const db = client.db(dbName);
+        const collection = db.collection("Users");
+
+        return collection
+          .find({ googleId: id })
+          .toArray()
+          .then((data) => {
+            console.log("mis daticos: ", data);
             client.close();
             resolve(data);
           })

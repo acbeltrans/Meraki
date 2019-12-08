@@ -1,14 +1,13 @@
 import React, { useState, useRef } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
-import "./FormSignUp.css";
+import "./SignUpEmail.css";
 
-const FormSignUp = (props) => {
-  const [ name, setName ] = useState("");
-  const [ last_name, setLastName ] = useState("");
-  const [ email, setEmail ] = useState("");
-  const [ password, setPassword ] = useState("");
-  const [ estado, setEstado ] = useState(false);
+const SignUpEmail = props => {
+  const [name, setName] = useState("");
+  const [last_name, setLastName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   const inRefName = useRef();
   const inRefLastName = useRef();
   const inRefEmail = useRef();
@@ -32,21 +31,20 @@ const FormSignUp = (props) => {
 
   const handleSubmit = () => {
     fetch("/users", {
-      method  : "POST",
-      body    : JSON.stringify({
-        name      : name,
-        last_name : last_name,
-        email     : email,
-        password  : password
+      method: "POST",
+      body: JSON.stringify({
+        name: name,
+        last_name: last_name,
+        email: email,
+        password: password
       }),
-      headers : {
-        "Content-Type" : "application/json"
+      headers: {
+        "Content-Type": "application/json"
       }
     })
-      .then((res) => res.json())
-      .catch((error) => console.error("Error:", error))
-      .then((response) => console.log("Success:", response));
-    setEstado(true);
+      .then(res => res.json())
+      .catch(error => console.error("Error:", error))
+      .then(response => console.log("Success:", response));
   };
 
   return (
@@ -60,7 +58,14 @@ const FormSignUp = (props) => {
         <form>
           <div className="form-group">
             <label>Name</label>
-            <input onChange={onChangeName} type="text" ref={inRefName} className="Name" id="Name" placeholder="Name" />
+            <input
+              onChange={onChangeName}
+              type="text"
+              ref={inRefName}
+              className="Name"
+              id="Name"
+              placeholder="Name"
+            />
           </div>
           <div className="form-group">
             <label>Last Name</label>
@@ -77,11 +82,12 @@ const FormSignUp = (props) => {
             <label>Email address</label>
             <input
               onChange={onChangeEmail}
-              type="text"
+              type="email"
               ref={inRefEmail}
               className="Email"
               id="Email"
               placeholder="Email"
+              name="email"
             />
           </div>
           <div className="form-group">
@@ -98,7 +104,11 @@ const FormSignUp = (props) => {
         </form>
       </Modal.Body>
       <Modal.Footer>
-        <Link className="nav-link btnSignUp text" to="/ShowEventsGeneral" onClick={handleSubmit}>
+        <Link
+          className="nav-link btnSignUp text"
+          to="/ShowEvents"
+          onClick={handleSubmit}
+        >
           Sign up
         </Link>
       </Modal.Footer>
@@ -106,4 +116,4 @@ const FormSignUp = (props) => {
   );
 };
 
-export default FormSignUp;
+export default SignUpEmail;

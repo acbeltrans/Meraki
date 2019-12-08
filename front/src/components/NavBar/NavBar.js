@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import FormSignIn from "../Form/FormSignIn.js";
-import FormSignUp from "../Form/FormSignUp.js";
+import FormSignIn from "../Form/SignIn/FormSignIn.js";
+import FormSignUp from "../Form/SignUp/FormSignUp.js";
 import "./NavBar.css";
 
 const NavBar = () => {

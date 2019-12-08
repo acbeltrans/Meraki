@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import "./Home.css";
 import NavBar from "../NavBar/NavBar.js";
-import FormSignUp from "../Form/FormSignUp.js";
+import FormSignUp from "../Form/SignUp/FormSignUp.js";
 
 const Home = () => {
   const [ modalShowSignUp, setModalShowSignUp ] = useState(false);
