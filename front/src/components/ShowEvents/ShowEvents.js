@@ -114,9 +114,10 @@ class ShowGroups extends React.Component {
             this.setState({
               modalShowCreateEvent : false
             })}
-          click={() =>
+          isclicked={() =>
             this.setState({
-              alertShow : true
+              alertShow            : true,
+              modalShowCreateEvent : false
             })}
         />
       </div>
