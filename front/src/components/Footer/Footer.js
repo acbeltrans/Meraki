@@ -7,9 +7,9 @@ const Footer = () => {
     <MDBFooter color="blue" className="font-small pt-4 mt-4 footer">
       <MDBContainer fluid className="text-center text-md-left">
         <MDBRow>
-          <MDBCol md="6"></MDBCol>
+          <MDBCol md="6" />
           <MDBCol md="6">
-            <ul></ul>
+            <ul />
           </MDBCol>
         </MDBRow>
       </MDBContainer>

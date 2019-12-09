@@ -1,8 +1,6 @@
 import React, { useState, useRef } from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import Modal from "react-bootstrap/Modal";
-import Alert from "react-bootstrap/Alert";
-import ReactFileReader from "react-file-reader";
 
 const CreateEvent = (props) => {
   const [ name, setName ] = useState("");
