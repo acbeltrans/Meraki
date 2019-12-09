@@ -11,7 +11,7 @@ const NavBar = () => {
 
   const [user, setUser] = useState(null);
 
-  const backUrl = "http://localhost:3001";
+  const backUrl = process.env.BACK_URL || "http://localhost:3001";
 
   useEffect(() => {
     fetch(`/auth/getUser`)

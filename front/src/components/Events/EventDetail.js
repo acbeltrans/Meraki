@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import SignNavBar from "../SignNavBar/SignNavBar.js";
+import SignNavBar from "../NavBar/NavBar.js";
 
 const EventDetail = () => {
   return (

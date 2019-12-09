@@ -5,7 +5,7 @@ const MyMongoLib = function() {
   const MyMongoLib = this || {};
 
   // Connection URL
-  const url = "mongodb://localhost:27017";
+  const url = process.env.MONGO_URL || "mongodb://localhost:27017";
   // Database Name
   const dbName = "Meraki";
   // Create a new MongoClient

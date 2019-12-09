@@ -77,7 +77,6 @@ class FormSignIn extends React.Component {
                 placeholder="Password"
               />
             </div>
-            {console.log(this.state.estado, "help")}
           </form>
         </Modal.Body>
         <Modal.Footer>
