@@ -6,6 +6,7 @@ import ShowEventsGeneral from "./components/ShowEventsGeneral/ShowEventsGeneral.
 import EventDetail from "./components/Events/EventDetail.js";
 import About from "./components/About/About.js";
 import CreateEvent from "./components/Form/CreateEvent/CreateEvent.js";
+import Footer from "./components/Footer/Footer.js";
 import "./App.css";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/EventDetail" component={EventDetail} />
         <Route path="/CreateEvent" component={CreateEvent} />
       </Switch>
+      <Footer></Footer>
     </Router>
   );
 }

@@ -1,7 +1,7 @@
 .mainHome {
 	padding: 50px 0px 50px 0px;
 	border-width: 2px;
-	background: linear-gradient(45deg, rgba(237,237,237,1) 0%, rgba(254,215,102,1) 58%, rgba(254,215,102,1) 100%);
+	background: linear-gradient(45deg, rgba(237,237,237,0.71) 0%, rgba(254,215,102,0.63) 48%, rgba(254,215,102,0.54) 100%);
 }
 
 .text {
@@ -35,4 +35,10 @@
 	font-family: 'Libre Baskerville', serif;
 	font-size: 60px;
 	text-align: left;
+}
+
+.biTitle {
+	font-family: 'Libre Franklin', sans-serif;
+	padding: 30px 0px 60px 0px;
+	color:#F3752B;
 }

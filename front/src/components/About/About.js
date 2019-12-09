@@ -36,7 +36,7 @@ const About = () => {
               src={connect}
               width="90"
               height="90"
-              alt="image of a calendar in black and white"
+              alt="image representing connection between people"
             />
           </div>
           <div className="col-lg-2 col-x1-2">
@@ -47,7 +47,7 @@ const About = () => {
                 src={ease}
                 width="90"
                 height="90"
-                alt="image of a list in black and white"
+                alt="image representing something easy"
               />
             </div>
           <div className="col-lg-2 col-x1-2">
@@ -58,7 +58,7 @@ const About = () => {
                 src={motivate}
                 width="90"
                 height="90"
-                alt="image of a shopping cart in black and white"
+                alt="image representing motivation between people"
               />
             </div>
         </div>
@@ -104,7 +104,7 @@ const About = () => {
                 src={gratitude}
                 width="90"
                 height="90"
-                alt="image of a calendar in black and white"
+                alt="image of gratitude"
               />
             </div>
           <div className="col-lg-2 col-x1-2">
@@ -115,7 +115,7 @@ const About = () => {
                 src={empathy}
                 width="90"
                 height="90"
-                alt="image of a list in black and white"
+                alt="image of empathy"
               />
             </div>
           <div className="col-lg-2 col-x1-2">
@@ -126,25 +126,25 @@ const About = () => {
                 src={solidarity}
                 width="90"
                 height="90"
-                alt="image of a shopping cart in black and white"
+                alt="image of solidarity"
               />
             </div>
         </div>
         <div className="row">
           <div className="col-lg-4 col-x1-4 divText">
-            <p className="minortext">
+            <p className="minortext mini">
               We must never forget that the greatest appreciation is not to
               pronounce it words, but to live according to them
             </p>
           </div>
           <div className="col-lg-4 col-x1-4 divText">
-            <p className="minortext">
+            <p className="minortext mini">
               The most basic of human needs is to understand and be understood.
               The best way to understand a person is to listen
             </p>
           </div>
           <div className="col-lg-4 col-x1-4 divText">
-            <p className="minortext">
+            <p className="minortext mini">
               Great opportunities to help others rarely come, but small ones
               surround us every day.
             </p>
