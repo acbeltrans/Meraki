@@ -6,7 +6,7 @@ import SignUpEmail from "./SignUpEmail.js";
 import "./FormSignUp.css";
 
 const FormSignUp = props => {
-  const [ modalShowSignUpEmail, setModalShowSignUpEmail ] = useState(false);
+  const [modalShowSignUpEmail, setModalShowSignUpEmail] = useState(false);
   const backUrl = process.env.BACK_URL || "http://localhost:3001";
 
   const handleClick = () => {
@@ -22,17 +22,30 @@ const FormSignUp = props => {
       </Modal.Header>
       <Modal.Body>
         <form>
-          <a className="nav-link text" href={`${backUrl}/auth/google`}>
-            Sign up with Google
-          </a>
-          <a className="nav-link text" onClick={() => handleClick()}>
-            Sign up with Email
-          </a>
-          <SignUpEmail show={modalShowSignUpEmail} onHide={() => setModalShowSignUpEmail(false)} />
+          <form action={`${backUrl}/auth/google`}>
+            <input
+              className="nav-link text btnSignUp1"
+              type="submit"
+              value="Sign up with Google"
+            />
           </form>
+          <a className="nav-link text btnSignUp2">Or</a>
+
+          <form>
+            <input
+              className="nav-link text btnSignUp1"
+              type="button"
+              value="Sign up with Email"
+              onClick={() => handleClick()}
+            />
+          </form>
+          <SignUpEmail
+            show={modalShowSignUpEmail}
+            onHide={() => setModalShowSignUpEmail(false)}
+          />
+        </form>
       </Modal.Body>
-      <Modal.Footer>
-        </Modal.Footer>
+      <Modal.Footer></Modal.Footer>
     </Modal>
   );
 };

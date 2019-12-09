@@ -44,8 +44,8 @@ const Home = () => {
               <div className="col-sm-3 col-md-3 col-lg-2">
                 <img
                   src="https://image.flaticon.com/icons/svg/263/263105.svg"
-                  width="150"
-                  height="150"
+                  width="100"
+                  height="100"
                   alt="Arrow"
                   align="right"
                 />
@@ -130,10 +130,11 @@ const Home = () => {
             </div>
           </div>
           <div className="container">
-            <h1 className="biTitle"><u>Upcoming</u> events</h1>
+            <h1 className="biTitle">
+              <u>Upcoming</u> events
+            </h1>
             <ShowEvents></ShowEvents>
           </div>
-
         </div>
       )}
     </div>

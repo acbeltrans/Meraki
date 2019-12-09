@@ -22,9 +22,10 @@
 }
 
 .mHome {
-	padding: 40px 0px 40px 0px;
+	padding: 10px 0px 10px 0px;
+	margin: 0px 0px 160px 0px;
 	border-width: 0px;
-	background: linear-gradient(45deg, rgba(237,237,237,1) 0%, rgba(254,215,102,1) 58%, rgba(254,215,102,1) 100%);
+	background: linear-gradient(45deg, rgba(237,237,237,0.71) 0%, rgba(254,215,102,0.63) 48%, rgba(254,215,102,0.54) 100%);
 }
 
 .tinBlock {
@@ -33,7 +34,7 @@
 
 .oText {
 	font-family: 'Libre Baskerville', serif;
-	font-size: 60px;
+	font-size: 30px;
 	text-align: left;
 }
 
