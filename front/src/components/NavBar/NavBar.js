@@ -62,9 +62,9 @@ const NavBar = () => {
                 </ul>
               </div>
 
-              <a className="nav-link text" href={`${backUrl}/auth/logout`}>
-                Sign out
-              </a>
+              <form action={`${backUrl}/auth/logout`} method="POST">
+                <input className="btnInput" type="button" value="Sign out" />
+              </form>
             </nav>
           </div>
         ) : (
