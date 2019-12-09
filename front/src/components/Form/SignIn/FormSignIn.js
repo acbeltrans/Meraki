@@ -4,9 +4,9 @@ import Modal from "react-bootstrap/Modal";
 import SignInEmail from "../SignIn/SignInEmail.js";
 import "./FormSignIn.css";
 
-const FormSignUp = props => {
-  const [modalShowSignUpEmail, setModalShowSignUpEmail] = useState(false);
-  const backUrl = process.env.BACK_URL || "http://localhost:3001";
+const FormSignUp = (props) => {
+  const [ modalShowSignUpEmail, setModalShowSignUpEmail ] = useState(false);
+  const backUrl = process.env.BACK_URL;
 
   const handleClick = () => {
     setModalShowSignUpEmail(true);
@@ -22,15 +22,11 @@ const FormSignUp = props => {
       <Modal.Body>
         <form>
           <form action={`${backUrl}/auth/google`}>
-            <input
-              className="nav-link text btnSignIn"
-              type="submit"
-              value="Sign in with Google"
-            />
+            <input className="nav-link text btnSignIn" type="submit" value="Sign in with Google" />
           </form>
         </form>
       </Modal.Body>
-      <Modal.Footer></Modal.Footer>
+      <Modal.Footer />
     </Modal>
   );
 };

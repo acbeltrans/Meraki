@@ -5,9 +5,9 @@ import FormSignIn from "../SignIn/FormSignIn.js";
 import SignUpEmail from "./SignUpEmail.js";
 import "./FormSignUp.css";
 
-const FormSignUp = props => {
-  const [modalShowSignUpEmail, setModalShowSignUpEmail] = useState(false);
-  const backUrl = process.env.BACK_URL || "http://localhost:3001";
+const FormSignUp = (props) => {
+  const [ modalShowSignUpEmail, setModalShowSignUpEmail ] = useState(false);
+  const backUrl = process.env.BACK_URL;
 
   const handleClick = () => {
     setModalShowSignUpEmail(true);
@@ -23,15 +23,11 @@ const FormSignUp = props => {
       <Modal.Body>
         <form>
           <form action={`${backUrl}/auth/google`}>
-            <input
-              className="nav-link text btnSignUp1"
-              type="submit"
-              value="Sign up with Google"
-            />
+            <input className="nav-link text btnSignUp1" type="submit" value="Sign up with Google" />
           </form>
         </form>
       </Modal.Body>
-      <Modal.Footer></Modal.Footer>
+      <Modal.Footer />
     </Modal>
   );
 };

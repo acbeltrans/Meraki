@@ -31,16 +31,6 @@ class FormSignIn extends React.Component {
       );
   }
 
-  /*   getData = () => {
-    this.state.data.map((d) => <div key={d._id}> {this.check(d.email, d.password)} </div>);
-  };
-
-  check(email, password) {
-    if (email === this.state.email && password === this.state.password) {
-      this.setState({ estado: true });
-    }
-  } */
-
   onChangeEmail = (e) => {
     this.setState({ email: e.target.value });
   };
@@ -48,10 +38,6 @@ class FormSignIn extends React.Component {
   onChangePassword = (e) => {
     this.setState({ password: e.target.value });
   };
-
-  /*   moreChecking = (e) => {
-    this.getData();
-  }; */
 
   render(props) {
     return (
