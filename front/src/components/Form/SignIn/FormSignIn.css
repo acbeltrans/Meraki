@@ -1,20 +1,20 @@
 .btnSignIn {
-  background-color: #F3752B;
+  background-color: #FED766;
   color: black;
   border: none;
-  padding: 10px 10px 10px 10px;
+  padding: 50px 10px 50px 10px;
   width: 100%;
   text-align: center;
 }
 
 .btnSignIn:hover {
-  background-color: #F3752B;
+  background-color: #FED766;
   color: black;
   border: none;
-  padding: 10px 10px 10px 10px;
+  padding: 0px;
   width: 100%;
   text-align: center;
-}
+} 
 
 .title {
   font-family: 'Libre Baskerville', serif;

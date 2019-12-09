@@ -14,7 +14,7 @@ For this project we used:
 - HTML
 - CSS
 - Javascript
-On the other hand, the application is deployed in Heroku
+- On the other hand, the application is deployed in Heroku: https://meraki-web-app.herokuapp.com/
 
 # How to run
 ## Prerequisites

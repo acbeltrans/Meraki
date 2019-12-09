@@ -29,16 +29,7 @@ input[type=password], select {
 }
 
 .btnSignUp1 {
-  background-color: #F3752B;
-  color: black;
-  border: 3px;
-  padding: 10px 10px 100px 10px;
-  width: 100%;
-  text-align: center;
-}
-
-.btnSignUp2 {
-  background-color: white;
+  background-color: #FED766;
   color: black;
   border: 3px;
   padding: 10px 10px 100px 10px;

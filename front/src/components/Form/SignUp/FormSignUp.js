@@ -29,20 +29,6 @@ const FormSignUp = props => {
               value="Sign up with Google"
             />
           </form>
-          <a className="nav-link text btnSignUp2">Or</a>
-
-          <form>
-            <input
-              className="nav-link text btnSignUp1"
-              type="button"
-              value="Sign up with Email"
-              onClick={() => handleClick()}
-            />
-          </form>
-          <SignUpEmail
-            show={modalShowSignUpEmail}
-            onHide={() => setModalShowSignUpEmail(false)}
-          />
         </form>
       </Modal.Body>
       <Modal.Footer></Modal.Footer>

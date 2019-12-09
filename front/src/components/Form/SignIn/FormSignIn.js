@@ -23,25 +23,11 @@ const FormSignUp = props => {
         <form>
           <form action={`${backUrl}/auth/google`}>
             <input
-              className="nav-link text btnSignUp1"
+              className="nav-link text btnSignIn"
               type="submit"
               value="Sign in with Google"
             />
           </form>
-          <a className="nav-link text btnSignUp2">Or</a>
-
-          <form>
-            <input
-              className="nav-link text btnSignUp1"
-              type="button"
-              value="Sign in with Email"
-              onClick={() => handleClick()}
-            />
-          </form>
-          <SignInEmail
-            show={modalShowSignUpEmail}
-            onHide={() => setModalShowSignUpEmail(false)}
-          />
         </form>
       </Modal.Body>
       <Modal.Footer></Modal.Footer>
