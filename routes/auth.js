@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
-const frontURL = process.env.FRONT_URL || "http://localhost:3000";
+const frontURL = process.env.FRONT_URL || "https://meraki-web-app.herokuapp.com/";
 
 /*Auth login*/
 router.get("/signup", function(req, res) {
