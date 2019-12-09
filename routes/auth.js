@@ -1,11 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const passport = require("passport");
-const frontURL = process.env.FRONT_URL || "http://localhost:3000";
+const frontURL = "https://meraki-web-app.herokuapp.com/";
 
 /*Auth login*/
 router.get("/signup", function(req, res) {
-	res.render("signup");
+  res.render("signup");
 });
 
 /*Login out*/
@@ -16,20 +16,20 @@ router.post("/logout", (req, res) => {
 
 /*Google login*/
 router.get(
-	"/google",
-	passport.authenticate("google", {
-		scope: ["profile"]
-	})
+  "/google",
+  passport.authenticate("google", {
+    scope : [ "profile" ]
+  })
 );
 
 //Callback route for google to redirect to
 router.get(
-	"/google/redirect",
-	passport.authenticate("google"), // Failure triggers the default failure handler (401 Unauthorized)
-	(req, res) => {
-		// Successful authentication redirects home.
-		res.redirect(`${frontURL}/`);
-	}
+  "/google/redirect",
+  passport.authenticate("google"), // Failure triggers the default failure handler (401 Unauthorized)
+  (req, res) => {
+    // Successful authentication redirects home.
+    res.redirect(`${frontURL}/`);
+  }
 );
 
 router.get("/getUser", (req, res) => res.json(req.user || null));

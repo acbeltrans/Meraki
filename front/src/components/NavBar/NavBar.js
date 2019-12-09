@@ -5,22 +5,20 @@ import FormSignUp from "../Form/SignUp/FormSignUp.js";
 import "./NavBar.css";
 
 const NavBar = () => {
-  const [modalShowSignIn, setModalShowSignIn] = useState(false);
+  const [ modalShowSignIn, setModalShowSignIn ] = useState(false);
 
-  const [modalShowSignUp, setModalShowSignUp] = useState(false);
+  const [ modalShowSignUp, setModalShowSignUp ] = useState(false);
 
-  const [user, setUser] = useState(null);
+  const [ user, setUser ] = useState(null);
 
-  const backUrl = process.env.BACK_URL || "http://localhost:3001";
+  const backUrl = process.env.BACK_URL || "https://meraki-web-app.herokuapp.com/";
 
   useEffect(() => {
-    fetch(`/auth/getUser`)
-      .then(res => res.json())
-      .then(_user => {
-        console.log("user", _user);
+    fetch(`/auth/getUser`).then((res) => res.json()).then((_user) => {
+      console.log("user", _user);
 
-        if (_user) setUser(_user);
-      });
+      if (_user) setUser(_user);
+    });
   }, []);
 
   const handleClick = () => {
@@ -40,14 +38,10 @@ const NavBar = () => {
                 data-target="#navbarTogglerDemo01"
                 aria-controls="navbarTogglerDemo01"
                 aria-expanded="false"
-                aria-label="Toggle navigation"
-              >
+                aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon" />
               </button>
-              <div
-                className="collapse navbar-collapse"
-                id="navbarTogglerDemo01"
-              >
+              <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
                 <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                   <li className="nav-item">
                     <Link to="/" className="nav-link">
@@ -76,8 +70,7 @@ const NavBar = () => {
               data-target="#navbarTogglerDemo01"
               aria-controls="navbarTogglerDemo01"
               aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
+              aria-label="Toggle navigation">
               <span className="navbar-toggler-icon" />
             </button>
             <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
@@ -95,10 +88,7 @@ const NavBar = () => {
               </ul>
             </div>
 
-            <button
-              className="btn btn-ligth"
-              onClick={() => setModalShowSignUp(true)}
-            >
+            <button className="btn btn-ligth" onClick={() => setModalShowSignUp(true)}>
               Sign Up
             </button>
 
@@ -106,15 +96,9 @@ const NavBar = () => {
               Sign In
             </button>
 
-            <FormSignIn
-              show={modalShowSignIn}
-              onHide={() => setModalShowSignIn(false)}
-            />
+            <FormSignIn show={modalShowSignIn} onHide={() => setModalShowSignIn(false)} />
 
-            <FormSignUp
-              show={modalShowSignUp}
-              onHide={() => setModalShowSignUp(false)}
-            />
+            <FormSignUp show={modalShowSignUp} onHide={() => setModalShowSignUp(false)} />
           </nav>
         )}
       </div>
