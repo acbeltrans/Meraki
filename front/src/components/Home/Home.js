@@ -68,8 +68,8 @@ const Home = () => {
       ) : (
         <div className="mainHome">
           <div className="row">
-            <div className="col-sm-3 col-md-3 col-lg-2" />
-            <div className="col-sm-3 col-md-3 col-lg-2">
+            <div className="col-lg-2" />
+            <div className="col-sm-6 col-md-2 col-lg-2">
               <img
                 src="https://image.flaticon.com/icons/svg/263/263105.svg"
                 width="70"
@@ -78,35 +78,27 @@ const Home = () => {
                 align="right"
               />
             </div>
-            <div className="col-sm-3 col-md-3 col-lg-2" />
-            <div className="col-sm-3 col-md-3 col-lg-2">
+            <div className="col-sm-3 col-md-5 col-lg-2" />
+            <div className="col-sm-3 col-md-5 col-lg-2">
+
+            </div>
+          </div>
+          <div className="row">
+            <div className="col-sm-12 col-md-12 col-lg-12">
+              <p className="text"><br />"Somewhere along the way, we must learn that there is nothing greater
+                than to do<br /> something for others."
+              </p>
               <p className="text">
-                than to do something for others."<br /> -Martin Luther King Jr.
+                <br /> ─ Martin Luther King Jr.
               </p>
             </div>
           </div>
           <div className="row">
-            <div className="col-sm-3 col-md-3 col-lg-2" />
-            <div className="col-sm-3 col-md-3 col-lg-2" />
-            <div className="col-sm-3 col-md-3 col-lg-2">
-              <p className="text">we must learn that there is nothing greater</p>
-            </div>
-            <div className="col-sm-3 col-md-3 col-lg-2 tinyBlock" />
-          </div>
-          <div className="row">
-            <div className="col-sm-3 col-md-3 col-lg-2" />
-            <div className="col-sm-3 col-md-3 col-lg-2">
-              <p className="text">"Somewhere along the way,</p>
-            </div>
-            <div className="col-sm-3 col-md-3 col-lg-2 tinyBlock" />
-            <div className="col-sm-3 col-md-3 col-lg-2" />
-          </div>
-          <div className="row">
-            <div className="col-sm-3 col-md-3 col-lg-2" />
-            <div className="col-sm-3 col-md-3 col-lg-2 tinyBlock" />
-            <div className="col-sm-3 col-md-3 col-lg-2" />
-            <div className="col-sm-3 col-md-3 col-lg-2" />
-            <div className="col-sm-3 col-md-3 col-lg-1">
+            <div className="col-sm- col-md- col-lg-2" />
+            <div className="col-sm- col-md- col-lg-2 " />
+            <div className="col-sm- col-md- col-lg-2" />
+            <div className="col-sm- col-md- col-lg-2" />
+            <div className="col-sm-6 col-md-6 col-lg-1">
               <img
                 src="https://image.flaticon.com/icons/svg/60/60758.svg"
                 width="70"
@@ -115,7 +107,7 @@ const Home = () => {
                 align="right"
               />
             </div>
-            <div className="col-sm-3 col-md-3 col-lg-1">
+            <div className="col-sm-6 col-md-6 col-lg-1">
               <p className="otherText">
                 <Link to="/" className="uText" onClick={() => setModalShowSignUp(true)}>
                   Join us

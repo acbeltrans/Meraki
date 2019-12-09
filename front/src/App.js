@@ -4,6 +4,7 @@ import Home from "./components/Home/Home.js";
 import ShowEvents from "./components/ShowEvents/ShowEvents.js";
 import ShowEventsGeneral from "./components/ShowEventsGeneral/ShowEventsGeneral.js";
 import EventDetail from "./components/Events/EventDetail.js";
+import About from "./components/About/About.js";
 import CreateEvent from "./components/Form/CreateEvent/CreateEvent.js";
 import "./App.css";
 
@@ -13,6 +14,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/ShowEvents" component={ShowEvents} />
+        <Route path="/About" component={About} />
         <Route path="/ShowEventsGeneral" component={ShowEventsGeneral} />
         <Route path="/EventDetail" component={EventDetail} />
         <Route path="/CreateEvent" component={CreateEvent} />

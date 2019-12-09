@@ -28,9 +28,43 @@ const NavBar = () => {
   };
 
   return (
-    <div className="container">
-      {user ? (
-        <div>
+    <div className="border-bottom mnavbar">
+      <div className="container">
+        {user ? (
+          <div>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+              <button
+                className="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarTogglerDemo01"
+                aria-controls="navbarTogglerDemo01"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+              >
+                <span className="navbar-toggler-icon" />
+              </button>
+              <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+                <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
+                  <li className="nav-item">
+                    <Link to="/" className="nav-link">
+                      Home
+                    </Link>
+                  </li>
+                  <li className="nav-item">
+                    <Link to="/ShowEvents" className="nav-link">
+                      Events
+                    </Link>
+                  </li>
+                </ul>
+              </div>
+
+              <form action={`${backUrl}/auth/logout`} method="POST">
+              <input type="submit" value="Logout" />
+            </form>
+            </nav>
+          </div>
+        ) : (
           <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <button
               className="navbar-toggler"
@@ -51,68 +85,36 @@ const NavBar = () => {
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to="/ShowEvents" className="nav-link">
-                    Events
+                  <Link to="/About" className="nav-link">
+                    About
                   </Link>
                 </li>
               </ul>
             </div>
 
-            <form action={`${backUrl}/auth/logout`} method="POST">
-            <input type="submit" value="Logout" />
-          </form>
+            <button
+              className="btn btn-ligth"
+              onClick={() => setModalShowSignUp(true)}
+            >
+              Sign Up
+            </button>
+
+            <button className="btn btn-dark" onClick={() => handleClick()}>
+              Sign In
+            </button>
+
+            <FormSignIn
+              show={modalShowSignIn}
+              onHide={() => setModalShowSignIn(false)}
+            />
+
+            <FormSignUp
+              show={modalShowSignUp}
+              onHide={() => setModalShowSignUp(false)}
+            />
           </nav>
-        </div>
-      ) : (
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-toggle="collapse"
-            data-target="#navbarTogglerDemo01"
-            aria-controls="navbarTogglerDemo01"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon" />
-          </button>
-          <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-            <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
-              <li className="nav-item">
-                <Link to="/" className="nav-link">
-                  Home
-                </Link>
-              </li>
-              <li className="nav-item">
-                <Link to="/ShowEventsGeneral" className="nav-link">
-                  Events
-                </Link>
-              </li>
-            </ul>
-          </div>
-
-          <button
-            className="btn btn-ligth"
-            onClick={() => setModalShowSignUp(true)}
-          >
-            Sign Up
-          </button>
-
-          <button className="btn btn-dark" onClick={() => handleClick()}>
-            Sign In
-          </button>
-
-          <FormSignIn
-            show={modalShowSignIn}
-            onHide={() => setModalShowSignIn(false)}
-          />
-
-          <FormSignUp
-            show={modalShowSignUp}
-            onHide={() => setModalShowSignUp(false)}
-          />
-        </nav>
-      )}
+        )}
+      </div>
     </div>
   );
 };
