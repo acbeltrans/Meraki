@@ -6,7 +6,7 @@ import "./FormSignIn.css";
 
 const FormSignUp = (props) => {
   const [ modalShowSignUpEmail, setModalShowSignUpEmail ] = useState(false);
-  const backUrl = process.env.BACK_URL || "https://meraki-web-app.herokuapp.com:3001/";
+  const backUrl = process.env.BACK_URL || "http://localhost:3001";
 
   const handleClick = () => {
     setModalShowSignUpEmail(true);
