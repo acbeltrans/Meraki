@@ -1,27 +1,17 @@
 .mainHome {
 	padding: 50px 0px 50px 0px;
-	border-width: 2px 2px 2px 2px;
-	background: linear-gradient(45deg, rgba(237,237,237,1) 0%, rgba(254,215,102,1) 58%, rgba(254,215,102,1) 100%);
-}
-
-.bigBlock {
-	border-style: solid;
-}
-
-.tinyBlock {
-	border-style: solid;
-	border-width: 5px 0px 0px 5px;
-	padding: 50px 0px 50px 0px;
+	border-width: 2px;
+	background: linear-gradient(45deg, rgba(237,237,237,0.71) 0%, rgba(254,215,102,0.63) 48%, rgba(254,215,102,0.54) 100%);
 }
 
 .text {
-	font-family: 'Rancho', cursive;
+	font-family: 'Libre Franklin', sans-serif;
 	font-size: 26px;
 	text-align: center;
 }
 
 .otherText {
-	font-family: 'Gudea', sans-serif;
+	font-family: 'Libre Baskerville', serif;
 	font-size: 20px;
 	text-align: left;
 }
@@ -32,9 +22,10 @@
 }
 
 .mHome {
-	padding: 40px 0px 40px 0px;
-	border-width: 2px 2px 2px 2px;
-	background: linear-gradient(45deg, rgba(237,237,237,1) 0%, rgba(254,215,102,1) 58%, rgba(254,215,102,1) 100%);
+	padding: 10px 0px 10px 0px;
+	margin: 0px 0px 160px 0px;
+	border-width: 0px;
+	background: linear-gradient(45deg, rgba(237,237,237,0.71) 0%, rgba(254,215,102,0.63) 48%, rgba(254,215,102,0.54) 100%);
 }
 
 .tinBlock {
@@ -42,7 +33,13 @@
 }
 
 .oText {
-	font-family: 'Gudea', sans-serif;
-	font-size: 60px;
+	font-family: 'Libre Baskerville', serif;
+	font-size: 30px;
 	text-align: left;
+}
+
+.biTitle {
+	font-family: 'Libre Franklin', sans-serif;
+	padding: 30px 0px 60px 0px;
+	color:#F3752B;
 }

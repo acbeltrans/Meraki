@@ -1,0 +1,34 @@
+.text-center {
+	text-align:center;
+}
+
+.bigTitle{
+	padding: 100px 0px 20px 0px;
+	color:#F3752B;
+	font-family: 'Libre Franklin', sans-serif;
+}
+
+.smallTitle {
+	padding: 5px 0px 90px 0px;
+	font-family: 'Libre Baskerville', serif;
+}
+
+.tinyTitle {
+	padding: 20px 0px 0px 5px;
+	font-family: 'Libre Franklin', sans-serif;
+	font-size: 30px;
+}
+
+.divText{
+
+}
+
+.minortext{
+	font-family: 'Libre Baskerville', serif;
+	padding: 0px 0px 30px 0px;
+	font-size: 18px;
+}
+
+.mini {
+	padding: 0px 0px 90px 0px;
+}

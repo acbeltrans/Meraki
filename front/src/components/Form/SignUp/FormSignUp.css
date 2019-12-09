@@ -28,28 +28,28 @@ input[type=password], select {
   box-sizing: border-box;
 }
 
-.btnSignUp {
+.btnSignUp1 {
   background-color: #F3752B;
   color: black;
-  border: none;
-  padding: 10px 10px 10px 10px;
+  border: 3px;
+  padding: 10px 10px 100px 10px;
   width: 100%;
   text-align: center;
 }
 
-.btnSignUp:hover {
-  background-color: #F3752B;
+.btnSignUp2 {
+  background-color: white;
   color: black;
-  border: none;
-  padding: 10px 10px 10px 10px;
+  border: 3px;
+  padding: 10px 10px 100px 10px;
   width: 100%;
   text-align: center;
 }
 
 .title {
-  font-family: 'Gudea', sans-serif;
+  font-family: 'Libre Baskerville', serif;
 }
 
 .text {
-  font-family: 'Gudea', sans-serif;
+  font-family: 'Libre Baskerville', serif;
 }
