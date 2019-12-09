@@ -32,7 +32,8 @@ class ShowGroups extends React.Component {
             {
               name        : data.name.text,
               description : data.description.text,
-              image       : data.logo.url
+              image       : data.logo.url,
+              counter     : 0
             }
           ]
         });
@@ -48,7 +49,8 @@ class ShowGroups extends React.Component {
         aux = {
           name        : data.name.text,
           description : data.description.text,
-          image       : data.logo.url
+          image       : data.logo.url,
+          counter     : 0
         };
 
         this.setState({
@@ -64,11 +66,12 @@ class ShowGroups extends React.Component {
       aux = [];
     });
   }
+
   renderEvents() {
     return this.state.events.map((e) => {
       return (
         <div className="col" key={e.name}>
-          <Events name={e.name} url={e.image} description={e.description} />
+          <Events name={e.name} url={e.image} description={e.description} counter={e.counter} id={e._id} />
         </div>
       );
     });

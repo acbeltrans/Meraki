@@ -33,7 +33,8 @@ const CreateEvent = (props) => {
       body    : JSON.stringify({
         name        : name,
         description : description,
-        image       : image
+        image       : image,
+        counter     : 0
       }),
       headers : {
         "Content-Type" : "application/json"
