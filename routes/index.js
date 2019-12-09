@@ -12,18 +12,19 @@ router.get("/", function(req, res) {
 /* Get Events */
 
 router.get("/events", function(req, res) {
-  myMongoLib
-    .getEvents()
-    .then(doc => res.send(doc))
-    .catch(err => res.send(err));
+  myMongoLib.getEvents().then((doc) => res.send(doc)).catch((err) => res.send(err));
+});
+
+/* Update Counter */
+router.put("/putEvents", (req, res) => {
+  let id = req.body.id;
+  let counter = req.body.counter;
+  myMongoLib.updateEventsById(id, counter).then((doc) => res.send(doc)).catch((err) => res.send(err));
 });
 
 //Get users
 router.get("/users", function(req, res) {
-  myMongoLib
-    .getUsers()
-    .then(doc => res.send(doc))
-    .catch(err => res.send(err));
+  myMongoLib.getUsers().then((doc) => res.send(doc)).catch((err) => res.send(err));
 });
 
 /* Post Event */
@@ -31,17 +32,16 @@ router.post("/postEvent", (req, res) => {
   let name = req.body.name;
   let description = req.body.description;
   let image = req.body.image;
+  let counter = req.body.counter;
 
   let newEvent = {
-    name: name,
-    description: description,
-    image: image
+    name        : name,
+    description : description,
+    image       : image,
+    counter     : counter
   };
 
-  myMongoLib
-    .postEvent(newEvent)
-    .then(doc => res.send(doc))
-    .catch(err => res.send(err));
+  myMongoLib.postEvent(newEvent).then((doc) => res.send(doc)).catch((err) => res.send(err));
 });
 
 module.exports = router;

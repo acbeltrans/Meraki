@@ -60,6 +60,29 @@ const MyMongoLib = function() {
       });
     });
 
+  /* Get events by id */
+  MyMongoLib.updateEventsById = (id) => {
+    new Promise((resolve, reject) => {
+      client.connect((err, client) => {
+        if (err !== null) {
+          reject(err);
+          return;
+        }
+
+        const db = client.db(dbName);
+        const collection = db.collection("Event");
+
+        return collection
+          .updateOne({ _id: id }, { $inc: { counter: 1 } })
+          .then((data) => {
+            client.close();
+            resolve(data);
+          })
+          .catch(reject);
+      });
+    });
+  };
+
   MyMongoLib.getUser = (googleId) =>
     new Promise((resolve, reject) => {
       // Use connect method to connect to the Server
@@ -82,6 +105,7 @@ const MyMongoLib = function() {
           .catch(reject);
       });
     });
+
   MyMongoLib.getUserById = (id) =>
     new Promise((resolve, reject) => {
       // Use connect method to connect to the Server
