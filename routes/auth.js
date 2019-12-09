@@ -9,8 +9,9 @@ router.get("/signup", function(req, res) {
 });
 
 /*Login out*/
-router.get("/logout", function(req, res) {
-	res.send("login out");
+router.post("/logout", (req, res) => {
+  req.logout();
+  res.redirect(`${frontURL}/`);
 });
 
 /*Google login*/
@@ -27,9 +28,10 @@ router.get(
 	passport.authenticate("google"), // Failure triggers the default failure handler (401 Unauthorized)
 	(req, res) => {
 		// Successful authentication redirects home.
-		res.send(req.user);
-		//res.redirect(`${frontURL}/`);
+		res.redirect(`${frontURL}/`);
 	}
 );
+
+router.get("/getUser", (req, res) => res.json(req.user || null));
 
 module.exports = router;

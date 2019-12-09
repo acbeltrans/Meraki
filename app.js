@@ -34,12 +34,6 @@ app.use(passport.session());
 app.use("/", indexRouter);
 app.use("/auth", authRouter);
 
-/*app.use(cookieSession({
-	maxAge: 24*60*60*1000,
-	keys: [KEYS.SESSION.COOKIE]
-}));*/
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));
