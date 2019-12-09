@@ -44,7 +44,10 @@ const NavBar = () => {
               >
                 <span className="navbar-toggler-icon" />
               </button>
-              <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
+              <div
+                className="collapse navbar-collapse"
+                id="navbarTogglerDemo01"
+              >
                 <ul className="navbar-nav mr-auto mt-2 mt-lg-0">
                   <li className="nav-item">
                     <Link to="/" className="nav-link">
@@ -59,9 +62,9 @@ const NavBar = () => {
                 </ul>
               </div>
 
-              <form action={`${backUrl}/auth/logout`} method="POST">
-              <input type="submit" value="Logout" />
-            </form>
+              <a className="nav-link text" href={`${backUrl}/auth/logout`}>
+                Sign out
+              </a>
             </nav>
           </div>
         ) : (
