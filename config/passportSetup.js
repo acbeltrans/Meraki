@@ -25,15 +25,7 @@ passport.use(
 					name: name,
 					profilePicture: profilePicture
 				};
-				myMongoLib
-				.postUser(newUser)
-				.then(doc => {
-					console.log("usuario creado ", newUser);
-					done(null, newUser);
-				})
-				.catch(err => {console.log("err in post User: ", err)});
 				
-				/*
 				//check if user exists in db
 				myMongoLib.getUserById(profile.id).then(currentUser => {
 					console.log("my current user is : ", currentUser)
@@ -54,7 +46,7 @@ passport.use(
 						
 					}
 				})
-				.catch(err => {console.log("err in get User: ", err)});*/
+				.catch(err => {console.log("err in get User: ", err)});
 			}
 		)
 	);
