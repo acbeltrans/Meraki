@@ -11,7 +11,7 @@ const NavBar = () => {
 
   const [ user, setUser ] = useState(null);
 
-  const backUrl = process.env.BACK_URL || "https://meraki-web-app.herokuapp.com/";
+  const backUrl = process.env.BACK_URL;
 
   useEffect(() => {
     fetch(`/auth/getUser`).then((res) => res.json()).then((_user) => {
