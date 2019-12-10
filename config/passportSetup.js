@@ -1,14 +1,14 @@
 const passport = require("passport");
-const { CLIENT_ID, CLIENT_SECRET } = process.env;
 const GoogleStrategy = require("passport-google-oauth20").Strategy;
 const MyMongoLib = require("../MyMongoLib");
 const myMongoLib = MyMongoLib();
+require("dotenv").config();
 
 passport.use(
 	new GoogleStrategy(
 		{
-			clientID: CLIENT_ID,
-			clientSecret: CLIENT_SECRET,
+			clientID: process.env.CLIENT_ID,
+			clientSecret: process.env.CLIENT_SECRET,
 			callbackURL: "/auth/google/redirect"
 		},
 		(accessToken, refreshToken, profile, done) => {

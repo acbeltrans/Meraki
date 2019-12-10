@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import Home from "./components/Home/Home.js";
+import HomeS from "./components/Home/HomeS.js";
 import ShowEvents from "./components/ShowEvents/ShowEvents.js";
 import ShowEventsGeneral from "./components/ShowEventsGeneral/ShowEventsGeneral.js";
 import EventDetail from "./components/Events/EventDetail.js";
@@ -19,6 +20,7 @@ function App() {
         <Route path="/ShowEventsGeneral" component={ShowEventsGeneral} />
         <Route path="/EventDetail" component={EventDetail} />
         <Route path="/CreateEvent" component={CreateEvent} />
+        <Route path="/Login" component={HomeS} />
       </Switch>
       <Footer></Footer>
     </Router>

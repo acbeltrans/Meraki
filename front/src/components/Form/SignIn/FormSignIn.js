@@ -6,7 +6,7 @@ import "./FormSignIn.css";
 
 const FormSignUp = (props) => {
   const [ modalShowSignUpEmail, setModalShowSignUpEmail ] = useState(false);
-  const backUrl = process.env.BACK_URL || "http://localhost:3001";
+  const backUrl = "http://localhost:3001";
 
   const handleClick = () => {
     setModalShowSignUpEmail(true);

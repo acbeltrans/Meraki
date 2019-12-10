@@ -20,7 +20,7 @@
 .btnInput{
   background-color: #292b2c;
   border: #292b2c;
-  color: white;
+  color: white !important;
   padding: 7px 7px;
   text-align: center;
   text-decoration: none;
