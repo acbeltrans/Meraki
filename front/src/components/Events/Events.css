@@ -4,6 +4,10 @@
   font-size: 20px;
 }
 
+.btn{
+  background: #f79d5c;
+}
+
 .btn #likebtn {
   background-color: #fed766;
 }
