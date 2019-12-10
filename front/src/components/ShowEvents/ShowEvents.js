@@ -1,6 +1,6 @@
 import React from "react";
 import Events from "../Events/Events.js";
-import SignNavbar from "../NavBar/NavBarS.js";
+import SignNavbar from "../NavBar/NavBar.js";
 import CreateEvent from "../Form/CreateEvent/CreateEvent.js";
 import Alert from "react-bootstrap/Alert";
 
