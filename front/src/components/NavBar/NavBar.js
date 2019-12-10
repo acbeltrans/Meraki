@@ -88,6 +88,7 @@ const NavBar = () => {
               </ul>
             </div>
 
+            <div>
             <button className="btn btn-ligth" onClick={() => setModalShowSignUp(true)}>
               Sign Up
             </button>
@@ -95,6 +96,7 @@ const NavBar = () => {
             <button className="btn btn-dark" onClick={() => handleClick()}>
               Sign In
             </button>
+            </div>
 
             <FormSignIn show={modalShowSignIn} onHide={() => setModalShowSignIn(false)} />
 
